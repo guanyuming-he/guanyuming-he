@@ -3,7 +3,7 @@
 ## My PGP key
 You may find my OpenPGP public key published [here](https://github.com/guanyuming-he/Openpgp-key) useful. 
 I don't know which email address I will use in the future, but you can always (in the next 10 years, to be cautious) trust the signatures made by my private key,
-if you know me and you are confident that this GitHub account is controlled by myself.
+if you know me and you are confident that this GitHub account is controlled by myself (of course, you have to trust your browser and the certificate authorities; be mindful to detail in security).
 
 ## Current Interests
 *The below may seem very broad together, but they are closely connected: the subfields I listed inside the parentheses intersect each other a lot.*
