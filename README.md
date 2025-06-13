@@ -8,7 +8,7 @@ if you know me and you are confident that this GitHub account is controlled by m
 ## Current Interests
 *The below may seem very broad together, but they are closely connected: the subfields I listed inside the parentheses intersect each other a lot.*
 
-1. Cybersecurity (cryptography, secure systems engineering, and in general security engineering)
+1. Cybersecurity (security engineering, privacy, systems, cryptography)
 2. Mathematics (mathematical logic, and very recently, elementary number theory)
 3. Theoretical computer science (type theory, proof assistants, computability)
 4. Computer systems (operating systems, secure systems, large software systems)
