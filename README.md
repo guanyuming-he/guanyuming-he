@@ -19,3 +19,8 @@ if you know me and you are confident that this GitHub account is controlled by m
 ## Previous Interests
 - Computer graphics
 - Video games design, and human-computer interaction
+
+## Don't trust GitHub activity panel
+The activity algorithm is biased. First, it won't count commits to non-default branches. 
+Second, private repos from my university GitHub account that I make public here also do not count, 
+because the author is that account of mine.
