@@ -1,7 +1,13 @@
 ## Current status: MSc student (degree expected in Nov 2025).
 
 # Interests and areas of work
-## Current
+## Current interests
+The chart below shows the areas that I currently have an interest in and work on.
+- Those in circles are general directions while those in rectangles are specific sub-topics.
+- Those that I primarily focus on are in red and have double borders, while all the others that I just get in contact with are in dark blue.
+- One topic derives (contains) another with an arrow, while the green dashed lines are connections between topics.
+- I tried many ways to place the Mathematics subgraph to the right but none worked. Thus, the current lines are a bit messy.
+
 ```mermaid
 flowchart LR
 	%% Primary general topic, general topic, primary subtopic, subtopic,
@@ -53,7 +59,7 @@ flowchart LR
 	end
 ```
 
-## Previous
+## Previous interests
 - Computer graphics
 - Video games design, and human-computer interaction
 
@@ -78,7 +84,7 @@ you are confident that this GitHub account is controlled by myself (of course,
 you have to trust your browser and the certificate authorities; be mindful to
 detail in security).
 
-## Instant Messaging
+## Instant messaging
 One significant weakness of using OpenPGP keys to encrypt emails is the lack of
 forward secrecy. To avoid having to trust a server, I only plan to use one
 Instant Messaging protocol, Tox, for now. My Tox ID:
