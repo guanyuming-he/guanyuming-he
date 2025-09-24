@@ -42,10 +42,10 @@ flowchart LR
 		TT[Type theory and\n Metamathematics]:::gen-pri
 		AL[Analysis & \nLinear Algebra]:::gen
 
-		CR <-- EN
-		FV <-- TT
-		ML <-- AL
-		HP <-- AL
+		EN --> CR
+		TT --> FV
+		AL --> ML
+		AL --> HP
 	end
 ```
 
