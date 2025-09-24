@@ -3,9 +3,9 @@
 # Interests and areas of work
 ## Current interests
 The chart below shows the areas that I currently have an interest in and work on.
-- Those in circles are general directions while those in rectangles are specific sub-topics.
+- Those in circles are general directions, while those in rectangles are specific sub-topics.
 - Those that I primarily focus on are in red and have double borders, while all the others that I just get in contact with are in dark blue.
-- One topic derives (contains) another with an arrow, while the green dashed lines are connections between topics.
+- One topic derives (contains) another with an arrow, and the green dashed lines are connections between topics.
 - I tried many ways to place the Mathematics subgraph to the right but none worked. Thus, the current lines are a bit messy.
 
 ```mermaid
@@ -67,7 +67,8 @@ flowchart LR
 ## Email addresses
 For now, I usually use guanyuminghe AT proton DOT me as my primary email
 address. If you are in the academia, then I might also use one of my
-institution email addresses.
+institution email addresses. The current one is guanyuming DOT he 24 AT 
+imperial DOT ac DOT uk.
 
 Please note that I have no intention to use any of the email addresses
 permanently. The proton one is subject to change should I find Proton unethical
@@ -93,6 +94,8 @@ BF011A0BF6AAB23526445921291C601DAA63D808BC13F8D3EC8164448007AD5276D5589D6A82
 
 On the other hand, email communication encourages one to think about the
 message one's drafting before sending it, as there's no way to retract it back. 
+Additionally, there's much less of the expectation for instant reply in email
+communication. As such, I would select the communication method by use case.
 
 
 ## Don't trust GitHub activity panel
