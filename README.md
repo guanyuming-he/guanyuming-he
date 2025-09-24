@@ -34,6 +34,7 @@ graph LR
   APP --> CS
   APP --> SE
   APP --> FV
+```
 
 ## Previous Interests
 - Computer graphics
