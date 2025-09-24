@@ -65,10 +65,11 @@ institution email addresses. The current one is guanyuming DOT he 24 AT
 imperial DOT ac DOT uk.
 
 Please note that I have no intention to use any of the email addresses
-permanently. The proton one is subject to change should I find Proton unethical
-and untrustworthy in the future (see the suspesion of journalists' email
-addresses by Proton, as of Sept 2025). The institution addresses are
-inherently temporary unless I obtain a permanent position in one someday.
+permanently. The proton one is subject to change, should I find Proton unethical
+and untrustworthy in the future (see the suspension of journalists' email
+addresses [by Proton](https://web.archive.org/web/20250923025829/https://theintercept.com/2025/09/12/proton-mail-journalist-accounts-suspended/)). 
+My institution addresses are inherently temporary unless I obtain a permanent 
+position in one someday.
 
 ## My PGP key
 You may find my OpenPGP public key published
@@ -92,7 +93,20 @@ Additionally, there's much less of the expectation for instant reply in email
 communication. As such, I would select the communication method by use case.
 
 
-## Don't trust GitHub activity panel
-The activity algorithm is biased. First, it won't count commits to non-default branches. 
-Second, private repos from my university GitHub account that I make public here also do not count, 
-because the author is that account of mine.
+# My repositories here
+## Distribution
+Most of my personal projects are here. The rest personal projects could be 
+belong to my other GitHub accounts, for example, the one I used during my 
+MSc, which was created to follow the recommendation of the department.
+For your convenience, I have negotiated to publish some of those under 
+other accounts of mine here. 
+
+I also made an organization that you can find on my homepage to contain 
+some of my group projects during my undergraduate study.
+
+## Don't trust my activity panel
+The activity algorithm is biased. First, it won't count commits to 
+non-default branches. I could be using many different branches heavily 
+sometimes. For instance, in some lab solutions I use a dedicated branch
+for one lab by design. Second, repos authored by my other accounts that
+I make public here also do not count.
