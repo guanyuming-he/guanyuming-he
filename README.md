@@ -3,7 +3,7 @@
 # Interests and areas of work
 ## Current
 ```mermaid
-flowchart LR
+flowchart TD
 	%% Primary general topic, general topic, primary subtopic, subtopic,
 	%% respectively
 	classDef gen-pri	shape:dbl-circ,stroke:#f00
@@ -14,15 +14,15 @@ flowchart LR
 	%% Left side: CS
 	subgraph "Computer Science"
 		%% General directions
-		CY[Cybersecurity]:::gen-pri
-		SE[Software\n Engineering]:::gen-pri
-		AI[Artificial\n Intelligence]:::gen
+		CY((Cybersecurity):::gen-pri
+		SE((Software\n Engineering):::gen-pri
+		AI(Artificial\n Intelligence):::gen
 
 		%% Cybersecurity branches
 		CY --> CR[Cryptography]:::sub
-		CY --> DR["Digital rights\n and privacy"]:::sub-pri
-		CY --> SS["Secure systems\n (OS, Distributed)"]:::sub-pri
-		CY --> FV["Formal \nverification"]:::sub-pri
+		CY --> DR[["Digital rights\n and privacy"]]:::sub-pri
+		CY --> SS[["Secure systems\n (OS, Distributed)"]]:::sub-pri
+		CY --> FV[["Formal \nverification"]]:::sub-pri
 		SE --> SS
 		SE --> FV
 		SE --> HP["High performance \n low-level programming"]:::sub
@@ -38,9 +38,9 @@ flowchart LR
 
 	%% Right side: Math
 	subgraph Mathematics
-		EN[Elementary \nnumber theory]:::gen
-		TT[Type theory and\n Metamathematics]:::gen-pri
-		AL[Analysis & \nLinear Algebra]:::gen
+		EN(Elementary \nnumber theory]:::gen
+		TT((Type theory and\n Metamathematics]]:::gen-pri
+		AL(Analysis & \nLinear Algebra]:::gen
 
 		EN --> CR
 		TT --> FV
