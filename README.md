@@ -5,7 +5,7 @@
 ```mermaid
 flowchart LR
 	subgraph "Current Interests"
-		direction TB
+		direction LR
 		%% Primary general topic, general topic, primary subtopic, subtopic,
 		%% respectively
 		classDef gen-pri	shape:dbl-circ,stroke:#f00
