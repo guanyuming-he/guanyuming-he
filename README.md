@@ -100,9 +100,9 @@ communication. As such, I would select the communication method by use case.
 
 # My repositories here
 ## Distribution
-Most of my personal projects are here. The rest personal projects could be 
-belong to my other GitHub accounts, for example, the one I used during my 
-MSc, which was created to follow the recommendation of the department.
+Most of my personal projects are here. Some other personal projects could
+be belong to my other GitHub accounts, for example, the one I used during
+my MSc, which was created to follow the recommendation of the department.
 For your convenience, I have negotiated to publish some of those under 
 other accounts of mine here. 
 
