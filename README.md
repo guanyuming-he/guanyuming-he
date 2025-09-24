@@ -3,7 +3,7 @@
 # Interests and areas of work
 ## Current
 ```mermaid
-flowchart TB
+flowchart LR
 	subgraph "Current Interests"
 		direction TB
 		%% Primary general topic, general topic, primary subtopic, subtopic,
