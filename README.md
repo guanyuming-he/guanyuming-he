@@ -5,7 +5,7 @@
 The chart below shows the areas that I currently have an interest in and work on.
 - Those in circles are general directions, while those in rectangles are specific sub-topics.
 - Those that I primarily focus on are in red and have double borders, while all the others that I just get in contact with are in dark blue.
-- One topic derives (contains) another with an arrow, and the green dashed lines are connections between topics.
+- One topic derives (contains) another with an arrow. The arrows in the CS area are in black, whereas those in the Math area are in blue.
 - I tried many ways to place the Mathematics subgraph to the right but none worked. Thus, the current lines are a bit messy.
 
 ```mermaid
@@ -35,12 +35,6 @@ flowchart LR
 		SE --> HP["High performance & low-level programming"]:::sub
 		AI --> ML["Machine learning"]:::sub -->
 		LLM["LLMs"]:::sub
-
-		SS -.- HP
-		ML -.- HP
-		SS -.- FV
-		%% Change link color
-		linkStyle 9,10,11 stroke:#0f0 
 	end
 
 	%% Right side: Math
@@ -55,7 +49,7 @@ flowchart LR
 		AL --> ML
 		AL --> HP
 		%% Change link color
-		linkStyle 12,13,14,15 stroke:#00f
+		linkStyle 9,10,11,12 stroke:#00f
 	end
 ```
 
