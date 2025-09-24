@@ -7,17 +7,35 @@ if you know me and you are confident that this GitHub account is controlled by m
 
 ## Current Interests
 ```mermaid
-graph TD
-    A[Cybersecurity] --> B[Cryptography]
-    B --> C[Elementary Number Theory, Probability]
-    A --> D[Secure System Design (OS, Distributed Systems)]
-    D <--> E[Software Engineering]
-    A --> F[Formal Verification]
-    E --> F
-    F --> G[Type Theory, Metamathematics]
-    H[Artificial Intelligence] --> I[Machine Learning]
-    I --> J[Applications to Cybersecurity, SE, Formal Verification]
-```
+graph LR
+  %% Core
+  subgraph Core[Core interests]
+    CS[Cybersecurity]
+    SE[Software Engineering]
+    AI[Artificial Intelligence]
+  end
+
+  %% Cybersecurity branches
+  CS --> CR[Cryptography]
+  CR --> NT[Number Theory & Probability]
+  CS --> SD[Secure System Design (OS & Distributed)]
+  CS --> FV[Formal Verification]
+
+  %% Software engineering connections
+  SD <--> SE
+  SE --> FV
+
+  %% Formal verification branch
+  FV --> TT[Type Theory & Metamathematics]
+
+  %% AI branch
+  AI --> ML[Machine Learning]
+  ML --> APP[Applications: Security, SE, Verification]
+
+  %% Applications link back to domains
+  APP --> CS
+  APP --> SE
+  APP --> FV
 
 ## Previous Interests
 - Computer graphics
