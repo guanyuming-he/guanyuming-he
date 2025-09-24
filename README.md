@@ -50,6 +50,8 @@ flowchart LR
 			TT --> FV
 			AL --> ML
 			AL --> HP
+			%% Change link color
+			linkStyle 12,13,14,15 stroke:#00f
 		end
 	end
 ```
