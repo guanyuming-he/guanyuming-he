@@ -82,7 +82,12 @@ detail in security).
 
 ## Instant messaging
 One significant weakness of using OpenPGP keys to encrypt emails is the lack of
-forward secrecy. To avoid having to trust a server, I only plan to use one
+forward secrecy. It is technically possible for two parties to perform a 
+Deffie-Hellman-like protocol via email to establish session keys, but that would
+be extremely cumbersome, compared with automatic processes employed by instant
+messaging programs.
+
+To avoid having to trust a server, I only plan to use one
 Instant Messaging protocol, Tox, for now. My Tox ID:
 BF011A0BF6AAB23526445921291C601DAA63D808BC13F8D3EC8164448007AD5276D5589D6A82
 (Check the Tox protocol specification to understand it https://toktok.ltd/spec)
