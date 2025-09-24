@@ -4,55 +4,52 @@
 ## Current
 ```mermaid
 flowchart LR
-	subgraph "Current Interests"
+	%% Primary general topic, general topic, primary subtopic, subtopic,
+	%% respectively
+	classDef gen-pri	shape:dbl-circ,stroke:#f00
+	classDef gen		shape:circle
+	classDef sub-pri	shape:subproc,stroke:#f00
+	classDef sub		shape:rect
+
+	%% Left side: CS
+	subgraph "Computer Science"
 		direction LR
-		%% Primary general topic, general topic, primary subtopic, subtopic,
-		%% respectively
-		classDef gen-pri	shape:dbl-circ,stroke:#f00
-		classDef gen		shape:circle
-		classDef sub-pri	shape:subproc,stroke:#f00
-		classDef sub		shape:rect
-	
-		%% Left side: CS
-		subgraph "Computer Science"
-			direction LR
-			%% General directions
-			CY((Cybersecurity)):::gen-pri
-			SE((Software Engineering)):::gen-pri
-			AI(Artificial Intelligence):::gen
-	
-			%% Cybersecurity branches
-			CY --> CR[Cryptography]:::sub
-			CY --> DR[["Digital rights and privacy"]]:::sub-pri
-			CY --> SS[["Secure systems (OS, Distributed)"]]:::sub-pri
-			CY --> FV[["Formal verification"]]:::sub-pri
-			SE --> SS
-			SE --> FV
-			SE --> HP["High performance & low-level programming"]:::sub
-			AI --> ML["Machine learning"]:::sub -->
-			LLM["LLMs"]:::sub
-	
-			SS -.- HP
-			ML -.- HP
-			SS -.- FV
-			%% Change link color
-			linkStyle 9,10,11 stroke:#0f0 
-		end
-	
-		%% Right side: Math
-		subgraph Mathematics
-			direction RL
-			EN(Elementary number theory):::gen
-			TT((Type theory and Metamathematics)):::gen-pri
-			AL(Analysis & Linear Algebra):::gen
-	
-			EN --> CR
-			TT --> FV
-			AL --> ML
-			AL --> HP
-			%% Change link color
-			linkStyle 12,13,14,15 stroke:#00f
-		end
+		%% General directions
+		CY((Cybersecurity)):::gen-pri
+		SE((Software Engineering)):::gen-pri
+		AI(Artificial Intelligence):::gen
+
+		%% Cybersecurity branches
+		CY --> CR[Cryptography]:::sub
+		CY --> DR[["Digital rights and privacy"]]:::sub-pri
+		CY --> SS[["Secure systems (OS, Distributed)"]]:::sub-pri
+		CY --> FV[["Formal verification"]]:::sub-pri
+		SE --> SS
+		SE --> FV
+		SE --> HP["High performance & low-level programming"]:::sub
+		AI --> ML["Machine learning"]:::sub -->
+		LLM["LLMs"]:::sub
+
+		SS -.- HP
+		ML -.- HP
+		SS -.- FV
+		%% Change link color
+		linkStyle 9,10,11 stroke:#0f0 
+	end
+
+	%% Right side: Math
+	subgraph Mathematics
+		direction RL
+		EN(Elementary number theory):::gen
+		TT((Type theory and Metamathematics)):::gen-pri
+		AL(Analysis & Linear Algebra):::gen
+
+		EN --> CR
+		TT --> FV
+		AL --> ML
+		AL --> HP
+		%% Change link color
+		linkStyle 12,13,14,15 stroke:#00f
 	end
 ```
 
