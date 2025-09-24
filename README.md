@@ -15,7 +15,7 @@ flowchart LR
 	
 		%% Left side: CS
 		subgraph "Computer Science"
-			direction TB
+			direction LR
 			%% General directions
 			CY((Cybersecurity)):::gen-pri
 			SE((Software\n Engineering)):::gen-pri
@@ -41,7 +41,7 @@ flowchart LR
 	
 		%% Right side: Math
 		subgraph Mathematics
-			direction BT
+			direction RL
 			EN(Elementary \nnumber theory):::gen
 			TT((Type theory and\n Metamathematics)):::gen-pri
 			AL(Analysis & \nLinear Algebra):::gen
