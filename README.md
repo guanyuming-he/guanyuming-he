@@ -18,17 +18,17 @@ flowchart LR
 			direction LR
 			%% General directions
 			CY((Cybersecurity)):::gen-pri
-			SE((Software\n Engineering)):::gen-pri
-			AI(Artificial\n Intelligence):::gen
+			SE((Software Engineering)):::gen-pri
+			AI(Artificial Intelligence):::gen
 	
 			%% Cybersecurity branches
 			CY --> CR[Cryptography]:::sub
-			CY --> DR[["Digital rights\n and privacy"]]:::sub-pri
-			CY --> SS[["Secure systems\n (OS, Distributed)"]]:::sub-pri
-			CY --> FV[["Formal \nverification"]]:::sub-pri
+			CY --> DR[["Digital rights and privacy"]]:::sub-pri
+			CY --> SS[["Secure systems (OS, Distributed)"]]:::sub-pri
+			CY --> FV[["Formal verification"]]:::sub-pri
 			SE --> SS
 			SE --> FV
-			SE --> HP["High performance \n low-level programming"]:::sub
+			SE --> HP["High performance  low-level programming"]:::sub
 			AI --> ML["Machine learning"]:::sub -->
 			LLM["LLMs"]:::sub
 	
@@ -42,9 +42,9 @@ flowchart LR
 		%% Right side: Math
 		subgraph Mathematics
 			direction RL
-			EN(Elementary \nnumber theory):::gen
-			TT((Type theory and\n Metamathematics)):::gen-pri
-			AL(Analysis & \nLinear Algebra):::gen
+			EN(Elementary number theory):::gen
+			TT((Type theory and Metamathematics)):::gen-pri
+			AL(Analysis & Linear Algebra):::gen
 	
 			EN --> CR
 			TT --> FV
