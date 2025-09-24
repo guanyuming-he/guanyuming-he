@@ -15,9 +15,9 @@ flowchart LR
 	subgraph "Computer Science"
 		direction LR
 		%% General directions
-		CY((Cybersecurity)):::gen-pri
-		SE((Software Engineering)):::gen-pri
-		AI(Artificial Intelligence):::gen
+		CY(((Cybersecurity))):::gen-pri
+		SE(((Software Engineering))):::gen-pri
+		AI((Artificial Intelligence)):::gen
 
 		%% Cybersecurity branches
 		CY --> CR[Cryptography]:::sub
@@ -40,9 +40,9 @@ flowchart LR
 	%% Right side: Math
 	subgraph Mathematics
 		direction RL
-		EN(Elementary number theory):::gen
-		TT((Type theory and Metamathematics)):::gen-pri
-		AL(Analysis & Linear Algebra):::gen
+		EN((Elementary number theory)):::gen
+		TT(((Type theory and Metamathematics))):::gen-pri
+		AL((Analysis & Linear Algebra)):::gen
 
 		EN --> CR
 		TT --> FV
