@@ -32,7 +32,7 @@ flowchart LR
 		SS -.- HP
 		ML -.- HP
 		SS -.- FV
-		% Change link color
+		%% Change link color
 		linkStyle 9,10,11 stroke=#0f0 
 	end
 
