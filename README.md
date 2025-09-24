@@ -28,7 +28,7 @@ flowchart LR
 			CY --> FV[["Formal verification"]]:::sub-pri
 			SE --> SS
 			SE --> FV
-			SE --> HP["High performance  low-level programming"]:::sub
+			SE --> HP["High performance & low-level programming"]:::sub
 			AI --> ML["Machine learning"]:::sub -->
 			LLM["LLMs"]:::sub
 	
