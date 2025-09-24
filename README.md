@@ -14,8 +14,8 @@ flowchart TD
 	%% Left side: CS
 	subgraph "Computer Science"
 		%% General directions
-		CY((Cybersecurity):::gen-pri
-		SE((Software\n Engineering):::gen-pri
+		CY((Cybersecurity)):::gen-pri
+		SE((Software\n Engineering)):::gen-pri
 		AI(Artificial\n Intelligence):::gen
 
 		%% Cybersecurity branches
@@ -38,9 +38,9 @@ flowchart TD
 
 	%% Right side: Math
 	subgraph Mathematics
-		EN(Elementary \nnumber theory]:::gen
-		TT((Type theory and\n Metamathematics]]:::gen-pri
-		AL(Analysis & \nLinear Algebra]:::gen
+		EN(Elementary \nnumber theory):::gen
+		TT((Type theory and\n Metamathematics)):::gen-pri
+		AL(Analysis & \nLinear Algebra):::gen
 
 		EN --> CR
 		TT --> FV
