@@ -3,7 +3,7 @@
 # Interests and areas of work
 ## Current
 ```mermaid
-flowchart TD
+flowchart TB
 	%% Primary general topic, general topic, primary subtopic, subtopic,
 	%% respectively
 	classDef gen-pri	shape:dbl-circ,stroke:#f00
@@ -13,7 +13,7 @@ flowchart TD
 
 	%% Left side: CS
 	subgraph ComputerScience
-		direction TD
+		direction TB
 		%% General directions
 		CY((Cybersecurity)):::gen-pri
 		SE((Software\n Engineering)):::gen-pri
