@@ -12,7 +12,7 @@ flowchart TD
 	classDef sub		shape:rect
 
 	%% Left side: CS
-	subgraph "Computer Science"
+	subgraph ComputerScience
 		direction TD
 		%% General directions
 		CY((Cybersecurity)):::gen-pri
