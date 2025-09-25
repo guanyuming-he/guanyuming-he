@@ -7,11 +7,11 @@
 I believe security is a good entrance into my current interests. It awards both
 attention to detail and high-level systematic view; its subfields connects
 directly with both theoretical and practical areas that fascinates me, and it
-offers effective tools to solve imminent problems I face in real life. 
+offers effective tools to solve the imminent problems I face in real life. 
 
 The term \emph{security} in computer science generally carries the sense of
 achieving \emph{security goals} through \emph{mechanisms or properties} of a
-system, despite the presence of adversaries under a \emph{threat model}. The
+system, despite the presence of adversaries in a \emph{threat model}. The
 threat model has to be carefully chosen and reviewed; there would be no
 security against an omnipotent adversary.
 
@@ -38,7 +38,7 @@ subsection, \ref{sec.crypto}, will transit into the other areas I study.
 \subsection{Secure Systems: Understanding the mechanisms} \label{sec.secure.systems}
 \subsubsection{A high-level view of the Internet}
 A high-level understanding of how the digital infrastructures work is essential
-to understand what enables the threats. The current networking infrastructure,
+to understand what enables these threats. The current networking infrastructure,
 in my opinion, has conflicting properties. On one hand, the fundamental problem
 of the impossibility to link every two computers requires sharing of links, a
 solution that welcomes centralization. On the other hand, the poor scalability
@@ -52,12 +52,12 @@ policies.
 
 Therefore, the Internet has become a mixture of centralization and
 decentralization, where each end node connects to an ISP network
-(centralization) and each ISP cooperates together to form the whole Internet
+(centralization) and ISPs cooperate together to form the whole Internet
 (decentralization). Perhaps surprisingly, I found this hybrid structure 
 more optimal for localized sabotage at the state level, creating
 ``sub-Internet''s, each of which is crippled at a different level. 
 
-Unfortunately, the Internet has proven to have great inertia for change.
+Unfortunately, the Internet has proven to have a great inertia for change.
 Handley gives a nice discussion on it in 2006 \cite{why.internet.just.works},
 and the trend he described has mostly been the same since then: ``\emph{he core
 Internet protocols have not changed significantly in more than a decade, in
@@ -72,9 +72,9 @@ rights and promote decentralization.
 Unfortunately again, because all of these are built on the Internet, a
 state-level censor could easily abuse its local authority to target specific
 protocols. China is notorious to have blocked a vast amount of protocols, and
-it temporarily blocked QUIC until it figured out how to only block specific
+it temporarily blocked QUIC until it figured out how to block only specific
 domains. The question of how to build protocols and systems on top of the
-Internet that adversaries control, is be central to my interest in secure
+Internet that adversaries control, is central to my interest in secure
 systems.
 
 \subsubsection{Low-level system details}
@@ -89,8 +89,8 @@ secure channels to exchange the keys and reliable safeguarding of the keys.
 A stunning turning point was found in what was widely regarded as the beginning
 of modern cryptography, Deffie and Hellman's \emph{New Directions in
 Cryptography} \cite{new.directions.crypto}, where they gave a practical
-mathematical procedure to Merkle's original idea for establishing a key only
-known to both parties over an insecure channel.
+mathematical procedure to Merkle's original idea for establishing a key known
+only to both parties over an insecure channel.
 
 At first glance, the idea sounded so impossible that Merkel himself faced 
 rejections when presenting the idea to his then professor Hoffman and to the
@@ -111,7 +111,7 @@ non-interceptible means from transmitting to receiving points}''
 Such ``paradoxical'' ideas of modern cryptography are what attract me most to
 it, because they are the enabler that underlies those systems mentioned in
 section~\ref{sec.secure.systems}: TOR, Bitcoin, OpenVPN, Matrix, etc., and the
-catalyst that leads to the massive adpotion of society advancements like
+catalyst that leads to the massive adoption of society advancements like
 e-commerce. Remarkably, in less than 50 years since 1976, we already have a
 number of such discoveries in addition:
 \begin{description}
