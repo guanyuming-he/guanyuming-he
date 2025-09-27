@@ -32,9 +32,10 @@ systematic, comprehensive, and far-reaching censorship \cite{internet.coup}
 
 How my security goal of being able to exercise my human rights in the presence of
 these powerful adversaries drives my interests will be explained by the
-following subsections, each of which also describes how my purely academic
-pursuits are intertwined with this realistic drive. Finally, the last
-subsection, \ref{sec.crypto}, will transit into the other areas I study.
+following subsections, some of which also describes how my more pure academic
+excitements are intertwined with this realistic drive. Finally, the last
+subsection, \ref{sec.crypto}, will lead the transition into the other areas of
+my interest.
 
 \subsection{Secure Systems: Understanding the mechanisms} 
 \label{sec.secure.systems}
@@ -76,12 +77,12 @@ them, which I discuss in detail in Section~\ref{sec.crypto}.
 
 Unfortunately again, because all of these are built on the Internet, a
 state-level censor could easily abuse its local authority to target them. A few
-countries are notorious to have blocked a vast amount of them to various
+regimes are notorious to have blocked a vast amount of them to various
 extents, employing complicated passive analysis and active probing techniques
 \cite{censor.block.1, censor.block.2,censor.block.3, censor.block.4,
 censor.block.5,censor.block.6},
 Although a state would need to consider the collatoral damage, a totalitarian
-scheme would not hesitate to block an entire protocol before it can figure out
+regime would not hesitate to block an entire protocol before it can figure out
 how to block it selectively \cite{selective.block.1, censor.block.4} 
 Apart from state-level actors, because commerical local ISPs additionally
 have an incentive in income and profit, not only do they perform surveillance
@@ -129,20 +130,71 @@ a system is formally verified to be secure within a host, it can still be
 attacked from interactions with an outer host. That is well examplified by
 the Meltdown attack, which breaks both kernel and hypervisor's isolation of
 memory, because an outer host, the hardware, has a vulnerability
-\cite{meltdown}. 
+\cite{meltdown}. In fact, Meltdown touches more than logical flaws in hardware;
+it relies on the timing difference of cache accesses to extract information
+from it \cite{flush.reload}, one that directly connects with the physical
+world. Indeed, other than timing, a running secure systems leaks information in
+so many other ways such as power and radiation via physical effects, which
+opens to a large range of attacks \cite{side.channel.1, side.channel.2,
+side.channel.3, flush.reload}, collectively defined as side-channel attacks.
+
+Although there's little hope to understand and model the universe thoroughly in
+one's life-time, a good understanding of the most common hosts, the operating
+systems and the hardware (including the architecture), will prove invaluable
+for me as a security researcher. Additionally, figuring out how to perform
+clever hacks (as in the hacking culture of MIT, not the mainstream meaning of
+cracking) based on knowledge of details of a system gives a great sense of
+achievement to me. Finally, this is one major place where cybersecurity
+connects directly with a broad range of other fields, including software
+engineering, systems architecture, networking, and physics.  These together
+contribute to my interest in the low-level details of secure systems.
+
+\subsection{Data-driven analysis: Lights through artifical clouds}
+Despite my intention to understand systems, many of them are not open for
+analysis, for various reasons. In particular, the aforementioned systems for
+digital surveillance and censorship are not only proprietary but often state
+secrets. On the other hand, similar to side channel attacks, these systems
+inevitably leak information in different ways.
+
+By observing their operation and actively testing how they react under
+controlled conditions, we will gain an insight into such systems. Combined with
+data scientific approaches that extract hidden structures, we could often
+obtain a reasonably good knowledge on a specific aspect of such systems. 
+
+The process usually involves 1) raising questions and claims about some
+properties of a target system 2) conducting experiments (from purchased servers
+within such as Aliyun) 3) analyzing data 4) answering questions and verifying
+claims. As a simple example, Sheffey et al.\ very recently studied the IP
+addresses injected by the GFW censorship system. By first finding injected IPs
+and then probing them within the GFW, they found that there are three
+categories of such IPs \cite{gfw.injected.ip}. 
+
+Thanks to continuous work from both academic scholars and dedicated
+organizations, (e.g.\ \cite{data.analysis.1, data.analysis.2, censor.block.6}),
+I and a small set of others who suffer from such systems and who are fortunate
+enough to know these works, could know what we are facing everyday better.
+Conversely, I strongly hope to contribute to the free-side of the arms race,
+making the free Internet reachable to everyone.
 
 \subsection{Cryptography: A mathematical savior} \label{sec.crypto}
-The connection between what could sound like a power struggle and academic
-fields lies within (modern) cryptography. For thousands of years since the use
-of the earliest symmetric encryption methods like the Ceasar cipher, the
-ability to securely communicate through an insecure channel had still been
-mostly limited to the privileged who could afford persistent access to physical
-secure channels to exchange the keys and reliable safeguarding of the keys.
-A stunning turning point was found in what was widely regarded as the beginning
-of modern cryptography, Deffie and Hellman's \emph{New Directions in
-Cryptography} \cite{new.directions.crypto}, where they gave a practical
-mathematical procedure to Merkle's original idea for establishing a key known
-only to both parties over an insecure channel.
+Security is often described as an arms race --- that who controls more
+resources tends to discover more vulnerabilities, devise more attacks, and
+harden their systems more. Where is hope, then, when most self-censor and give
+up fighting the regime \cite{self.censor.1, self.censor.2, self.censor.3}  and
+even fewer of them have sufficient skills to join in the crypto war
+\cite{defenders.lack.skills.1, defenders.lack.skills.2}?
+
+I believe one solution to what might sound like a power struggle lies within
+(modern) cryptography. For thousands of years since the use of the earliest
+symmetric encryption methods like the Ceasar cipher, the ability to securely
+communicate through an insecure channel had still been mostly limited to the
+privileged who could afford persistent access to physical secure channels to
+exchange the keys and reliable safeguarding of the keys.  A stunning turning
+point was found in what was widely regarded as the beginning of modern
+cryptography, Deffie and Hellman's \emph{New Directions in Cryptography}
+\cite{new.directions.crypto}, where they gave a practical mathematical
+procedure to Merkle's original idea for establishing a key known only to both
+parties over an insecure channel.
 
 At first glance, the idea sounded so impossible that Merkel himself faced 
 rejections when presenting the idea to his then professor Hoffman and to the
@@ -167,7 +219,7 @@ catalyst that leads to the massive adoption of society advancements such as
 e-commerce. Remarkably, in less than 50 years since 1976, we already have a
 number of such discoveries in addition:
 \begin{description}
-\item[Pseudorandom functions] The construction of deterministic algorithms
+\item[Pseudorandom functions] The kind of deterministic algorithms
 	whose outputs look like that of a random oracle, by block ciphers like
 	AES\cite{aes} or other ways \cite{pseudo.rand.cons.2}, support various
 	other essential constructs like one-way functions.
@@ -179,6 +231,8 @@ number of such discoveries in addition:
 
 \item[Homomorphic encryptions] By 
 \end{description}
+
+\section{Mathematics: My purer philosophical pursuits}
 
 \bibliographystyle{acm}
 \bibliography{main.bib}
