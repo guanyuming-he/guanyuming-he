@@ -24,7 +24,8 @@ data and communication in various forms by governments\footnote{ For instance,
 https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM\%3A2022\%3A209\%3AFIN}
 {Chat Control} proposal in 2025. See \url{
 https://eutechloop.com/time-is-running-chat-control/}.}, ignoring expert
-opinions against such measures \cite{keys.under.doormats, bugs.in.our.pockets}.
+opinions against such measures \cite{keys.under.doormats, bugs.in.our.pockets,
+chatcontrolchildprotection}.
 I unfortunately has suffered from more aggressive attacks, primarily
 systematic, comprehensive, and far-reaching censorship \cite{internet.coup}
 \cite[Sect.~5]{chall.censor.circum}, because of my background.
@@ -35,7 +36,8 @@ following subsections, each of which also describes how my purely academic
 pursuits are intertwined with this realistic drive. Finally, the last
 subsection, \ref{sec.crypto}, will transit into the other areas I study.
 
-\subsection{Secure Systems: Understanding the mechanisms} \label{sec.secure.systems}
+\subsection{Secure Systems: Understanding the mechanisms} 
+\label{sec.secure.systems}
 \subsubsection{A high-level view of the Internet}
 A high-level understanding of how the digital infrastructures work is essential
 to understand what enables these threats. The current networking infrastructure,
@@ -51,33 +53,83 @@ routing paths and allow different networks to implement different routing
 policies.
 
 Therefore, the Internet has become a mixture of centralization and
-decentralization, where each end node connects to an ISP network
-(centralization) and ISPs cooperate together to form the whole Internet
-(decentralization). Perhaps surprisingly, I found this hybrid structure 
-more optimal for localized sabotage at the state level, creating
+decentralization, where each end node is managed by an ISP network yet no
+single ISP runs the whole Internet . Perhaps surprisingly, I found this hybrid
+structure more optimal for localized sabotage at the state level, creating
 ``sub-Internet''s, each of which is crippled at a different level. 
 
-Unfortunately, the Internet has proven to have a great inertia for change.
-Handley gives a nice discussion on it in 2006 \cite{why.internet.just.works},
-and the trend he described has mostly been the same since then: ``\emph{he core
-Internet protocols have not changed significantly in more than a decade, in
-spite of exponential growth in the number of Internet users and the speed of
-the fastest links.}'' \cite{why.internet.just.works}. On the other hand, the
-protocols in the higher layers evolved to a much greater degree. As the
-transport layer welcomes QUIC\cite{???}, the application layer have accumulated
-an enormous amount of innovation and progress, in particular, TOR\cite{???},
-Bitcoin\cite{???}, OpenVPN\cite{???}, Matrix\cite{???}, that fight for digital
-rights and promote decentralization.
+Unfortunately, the lower layers of the Internet have proven to have a great
+inertia for change.  Handley gave a nice discussion on it in 2006
+\cite{why.internet.just.works}, and the trend he described has mostly been the
+same since then: ``\emph{the core Internet protocols have not changed
+significantly in more than a decade, in spite of exponential growth in the
+number of Internet users and the speed of the fastest links.}''
+\cite{why.internet.just.works}. On the other hand, the protocols in the higher
+layers evolved to a much greater degree. As the transport layer welcomes
+QUIC\cite{quic}, the application layer has accumulated an enormous amount of
+innovation and progress, in particular, onion routing and
+Tor\cite{onion.routing, tor}, Bitcoin\cite{bitcoin}, VPN
+protocols\cite{openvpn, wireguard} and decentralized instant chat\cite{matrix,
+tox}, that fight for digital rights and/or promote decentralization. Yet one
+must not overlook the crypto-constructs that lay the foundation for all of
+them, which I discuss in detail in Section~\ref{sec.crypto}.
 
 Unfortunately again, because all of these are built on the Internet, a
-state-level censor could easily abuse its local authority to target specific
-protocols. China is notorious to have blocked a vast amount of protocols, and
-it temporarily blocked QUIC until it figured out how to block only specific
-domains. The question of how to build protocols and systems on top of the
-Internet that adversaries control, is central to my interest in secure
-systems.
+state-level censor could easily abuse its local authority to target them. A few
+countries are notorious to have blocked a vast amount of them to various
+extents, employing complicated passive analysis and active probing techniques
+\cite{censor.block.1, censor.block.2,censor.block.3, censor.block.4,
+censor.block.5,censor.block.6},
+Although a state would need to consider the collatoral damage, a totalitarian
+scheme would not hesitate to block an entire protocol before it can figure out
+how to block it selectively \cite{selective.block.1, censor.block.4} 
+Apart from state-level actors, because commerical local ISPs additionally
+have an incentive in income and profit, not only do they perform surveillance
+and censorship like state-actors \cite{isp.statelike.actions.1,
+isp.statelike.actions.2}, they also implement unjust policies easily with their
+local control of the infrastructure, like unfairly limiting the use of certain
+P2P protocols \cite{isp.block.p2p.1, isp.block.p2p.2, isp.block.p2p.3,
+isp.statelike.actions.1}.  Although ISPs argue that these P2P protocols can
+take up too much bandwidth, the other side of the story is that ISPs often
+oversubscribe and fraudulently advertise the bandwidth of Internet service they
+provide \cite{isp.oversubscribe.1, isp.oversubscribe.2}. This essentially is a
+probabilistic exploit on its customers --- when almost all of the users happen
+to use the maximal bandwidth the ISP sells to them, cogestion and throttling
+occur, and the users, not the ISP, ultimately pay the price --- this is also
+the same kind of injustice imposed by airlines who oversell tickets, about
+which I will not discuss further.
+
+The question of how to build protocols and systems that preserves one's rights
+on top of the Internet that powerful adversaries control, fighting against
+surveillance, censorship, and overall other unfair practices which the
+infrastructures of the current networks happen to enable, is central to my
+interest in secure distributed systems.
 
 \subsubsection{Low-level system details}
+Beside the threat model, when we talk about security, we also implicitly assume
+another model, environment, or host, that encapsulates the problem. For
+instance, in the context of isolation, 
+\begin{itemize}
+	\item The host that encapsulates process isolation is the operating system
+		kernel.
+	\item The host that encapsulates virtual machine isolation is the
+		hypervisor, often including hardware support.
+	\item The host that encapsulates air-gapped machine isolation is the
+		physical world, or more abstractly, the physical laws.
+\end{itemize}
+Moreover, these hosts also form a hierachy; the physical world, as the ultimate
+host, contains all the others directly or indirectly. Take as example processes
+running in an OS from a virtual machine, physically on an air-gapped machine:
+in this case, the host OS is contained by the host hypervisor, the hardware,
+and finally the physical world.
+
+As a result, a security researcher has to understand these hosts, each to a
+different degree, depending on how secure she wants her systems to be. Even if
+a system is formally verified to be secure within a host, it can still be
+attacked from interactions with an outer host. That is well examplified by
+the Meltdown attack, which breaks both kernel and hypervisor's isolation of
+memory, because an outer host, the hardware, has a vulnerability
+\cite{meltdown}. 
 
 \subsection{Cryptography: A mathematical savior} \label{sec.crypto}
 The connection between what could sound like a power struggle and academic
@@ -111,7 +163,7 @@ non-interceptible means from transmitting to receiving points}''
 Such ``paradoxical'' ideas of modern cryptography are what attract me most to
 it, because they are the enabler that underlies those systems mentioned in
 section~\ref{sec.secure.systems}: TOR, Bitcoin, OpenVPN, Matrix, etc., and the
-catalyst that leads to the massive adoption of society advancements like
+catalyst that leads to the massive adoption of society advancements such as
 e-commerce. Remarkably, in less than 50 years since 1976, we already have a
 number of such discoveries in addition:
 \begin{description}
