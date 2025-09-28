@@ -46,10 +46,11 @@ in my opinion, has conflicting properties. On one hand, the fundamental problem
 of the impossibility to link every two computers requires sharing of links, a
 solution that welcomes centralization. On the other hand, the poor scalability
 of simple sharing schemes of a link (usually via a switch) necessitates a
-better scheme to extend a small network globally. The Internet relies on
-topological divisions in its address, and delegates most routing task to each
-individual networks (e.g.\ ISPs). Its BGP, opearing in between them, is mainly
-concerned exchanging reachability information, whereas its IGPs handle
+better scheme to extend a small network globally. To achieve this, the Internet
+relies heavily on delegation and distributed structures, such as topological
+divisions in its address and delegation of most routing responsibilities to
+each individual networks (e.g.\ ISPs). Its BGP, opearing in between them, is
+mainly concerned exchanging reachability information, whereas its IGPs handle
 routing paths and allow different networks to implement different routing
 policies.
 
@@ -116,12 +117,9 @@ instance, in the context of isolation,
 		hypervisor, often including hardware support.
 	\item The host that encapsulates air-gapped machine isolation is the
 		physical world, or more abstractly, the physical laws.
-\end{itemize}
-Moreover, these hosts also form a hierachy; the physical world, as the ultimate
-host, contains all the others directly or indirectly. Take as example processes
-running in an OS from a virtual machine, physically on an air-gapped machine:
-in this case, the host OS is contained by the host hypervisor, the hardware,
-and finally the physical world.
+\end{itemize} 
+These hosts form a hierarchy. For instance, processes inside an OS may run
+inside a virtual machine, on hardware, within the physical world.
 
 As a result, a security researcher has to understand these hosts, each to a
 different degree, depending on how secure she wants her systems to be. Even if
@@ -155,10 +153,10 @@ digital surveillance and censorship are not only proprietary but often state
 secrets. On the other hand, similar to side channel attacks, these systems
 inevitably leak information in different ways.
 
-By observing their operation and actively testing how they react under
-controlled conditions, we will gain an insight into such systems. Combined with
-data scientific approaches that extract hidden structures, we could often
-obtain a reasonably good knowledge on a specific aspect of such systems. 
+By carefully observing their behavior and probing their responses under
+controlled conditions, we can gain insight. Combined with data science
+techniques, these observations reveal hidden structures and enable us to draw
+meaningful conclusions.
 
 The process usually involves 1) raising questions and claims about some
 properties of a target system 2) conducting experiments (often involving
@@ -180,7 +178,7 @@ Security is often described as an arms race --- that who controls more
 resources tends to discover more vulnerabilities, devise more attacks, and
 harden their systems more. Where is hope, then, when most self-censor and give
 up fighting the regime \cite{self.censor.1, self.censor.2, self.censor.3}  and
-even fewer of them have sufficient skills to join in the crypto war
+even fewer of the fighters have sufficient skills to join in the crypto war
 \cite{defenders.lack.skills.1, defenders.lack.skills.2}?
 
 I believe one solution to what might sound like a power struggle lies within
@@ -249,12 +247,12 @@ authority to organize, now only requires the participate to trust a few
 foundamental assumptions of cryptography.
 
 Personally, I would go a step further. I believe modern cryptography offers not
-only technical tools, but a possible solution for addressing one of the deepest
+only technical tools, but a possible solution for addressing one of the big
 challenges our democracies face today: fragmentation, polarization, and the
 erosion of shared trust. By design, cryptography redistributes power --- it
 makes mass surveillance prohibitively costly, even for state-level actors, by
-forcing them to target individuals rather than populations. For example, if
-breaking one person’s encryption, on average, required even a single day of
+forcing them to target individuals rather than populations. For example,
+suppose breaking one person’s encryption, on average, required a single day of
 dedicated effort (through side-channels, vulnerabilities, or social engineering
 rather than mathematics), that constraint alone would prevent massive
 surveillance, since no adversary has that many days or resources to do this on
