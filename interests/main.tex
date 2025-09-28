@@ -54,8 +54,8 @@ routing paths and allow different networks to implement different routing
 policies.
 
 Therefore, the Internet has become a mixture of centralization and
-decentralization, where each end node is managed by an ISP network yet no
-single ISP runs the whole Internet . Perhaps surprisingly, I found this hybrid
+decentralization, where each end node is managed by an ISP network, yet no
+single ISP runs the whole Internet. Perhaps surprisingly, I found this hybrid
 structure more optimal for localized sabotage at the state level, creating
 ``sub-Internet''s, each of which is crippled at a different level. 
 
@@ -83,7 +83,7 @@ extents, employing complicated passive analysis and active probing techniques
 censor.block.5,censor.block.6},
 Although a state would need to consider the collatoral damage, a totalitarian
 regime would not hesitate to block an entire protocol before it can figure out
-how to block it selectively \cite{selective.block.1, censor.block.4} 
+how to block it selectively \cite{selective.block.1, censor.block.4}. 
 Apart from state-level actors, because commerical local ISPs additionally
 have an incentive in income and profit, not only do they perform surveillance
 and censorship like state-actors \cite{isp.statelike.actions.1,
@@ -91,14 +91,13 @@ isp.statelike.actions.2}, they also implement unjust policies easily with their
 local control of the infrastructure, like unfairly limiting the use of certain
 P2P protocols \cite{isp.block.p2p.1, isp.block.p2p.2, isp.block.p2p.3,
 isp.statelike.actions.1}.  Although ISPs argue that these P2P protocols can
-take up too much bandwidth, the other side of the story is that ISPs often
+consume too much bandwidth, the other side of the story is that ISPs often
 oversubscribe and fraudulently advertise the bandwidth of Internet service they
 provide \cite{isp.oversubscribe.1, isp.oversubscribe.2}. This essentially is a
 probabilistic exploit on its customers --- when almost all of the users happen
 to use the maximal bandwidth the ISP sells to them, cogestion and throttling
 occur, and the users, not the ISP, ultimately pay the price --- this is also
-the same kind of injustice imposed by airlines who oversell tickets, about
-which I will not discuss further.
+the same kind of injustice imposed by airlines who oversell tickets.
 
 The question of how to build protocols and systems that preserves one's rights
 on top of the Internet that powerful adversaries control, fighting against
@@ -162,12 +161,12 @@ data scientific approaches that extract hidden structures, we could often
 obtain a reasonably good knowledge on a specific aspect of such systems. 
 
 The process usually involves 1) raising questions and claims about some
-properties of a target system 2) conducting experiments (from purchased servers
-within such as Aliyun) 3) analyzing data 4) answering questions and verifying
-claims. As a simple example, Sheffey et al.\ very recently studied the IP
-addresses injected by the GFW censorship system. By first finding injected IPs
-and then probing them within the GFW, they found that there are three
-categories of such IPs \cite{gfw.injected.ip}. 
+properties of a target system 2) conducting experiments (often involving
+purchased servers within such as Aliyun) 3) analyzing data 4) answering
+questions and verifying claims. As a simple example, Sheffey et al.\ very
+recently studied the IP addresses injected by the GFW censorship system. By
+first finding injected IPs and then probing them within the GFW, they found
+three categories of such IPs \cite{gfw.injected.ip}. 
 
 Thanks to continuous work from both academic scholars and dedicated
 organizations, (e.g.\ \cite{data.analysis.1, data.analysis.2, censor.block.6}),
@@ -210,29 +209,72 @@ CACM \cite{merkle.rejection}:
 The rejections represented a concensus of the old cryptography community that
 even Shannon concurred with: ``\emph{The key must be transmitted by
 non-interceptible means from transmitting to receiving points}''
-\cite[p.~670]{shannon.theory.secrecy}.
+\cite[p.~670]{shannon.theory.secrecy}, which demonstrates how ``paradoxical''
+the idea was.
 
 Such ``paradoxical'' ideas of modern cryptography are what attract me most to
 it, because they are the enabler that underlies those systems mentioned in
 section~\ref{sec.secure.systems}: TOR, Bitcoin, OpenVPN, Matrix, etc., and the
 catalyst that leads to the massive adoption of society advancements such as
 e-commerce. Remarkably, in less than 50 years since 1976, we already have a
-number of such discoveries in addition:
+number of such discoveries in addition, and here's a list of some of them.
 \begin{description}
 \item[Pseudorandom functions] The kind of deterministic algorithms
 	whose outputs look like that of a random oracle, by block ciphers like
-	AES\cite{aes} or other ways \cite{pseudo.rand.cons.2}, support various
-	other essential constructs like one-way functions.
+	AES\cite{aes} or other ways \cite{pseudo.rand.cons.2}, has a strong link
+	with various other essential constructs like one-way functions.
 
 \item[Zero-knowledge proofs] By interactively leveraging challenges that only a
 	true prover could easily solve, zero-knowledge proof \cite{zero.knowledge}
 	enables one to verify that the prover knows a witness of a problem in NP
 	\cite{zero.knowledge.np} without revealing the witness.
 
-\item[Homomorphic encryptions] By 
+\item[Homomorphic encryptions] Doing computation on encrypted data has been a
+	very desirable property for many years. Although many earliest public-key
+	encryption schemes, such as RSA \cite{rsa} and ElGamal \cite{elgamal},
+	already natively supported limited homomorphism like modular
+	multiplication, by their design, the first full scheme that allowed
+	arbitrary computation on encrypted data was only proposed in 2009
+	\cite{first.full.homo}.
 \end{description}
 
-\section{Mathematics: My purer philosophical pursuits}
+These discoveries have many applications and implications, two of which I pay
+most attention to. One is that they update our understanding of certain
+theoretical lower bounds of how much security one can achieve in the face of
+strong adversaries, no matter the power difference between them. The other is
+how they help minimize the trust required to perform global-level of
+collaboration that involves people from vastly different backgrounds and
+beliefs; such a collaboration that would typically require a strong central
+authority to organize, now only requires the participate to trust a few
+foundamental assumptions of cryptography.
+
+Personally, I would go a step further. I believe modern cryptography offers not
+only technical tools, but a possible solution for addressing one of the deepest
+challenges our democracies face today: fragmentation, polarization, and the
+erosion of shared trust. By design, cryptography redistributes power --- it
+makes mass surveillance prohibitively costly, even for state-level actors, by
+forcing them to target individuals rather than populations. For example, if
+breaking one person’s encryption, on average, required even a single day of
+dedicated effort (through side-channels, vulnerabilities, or social engineering
+rather than mathematics), that constraint alone would prevent massive
+surveillance, since no adversary has that many days or resources to do this on
+everyone. In this way, encryption does something profound: it automatically and
+passively unites individuals, protecting each not by active coordination that
+is increaingly difficult, but by the collective shield of widespread adoption.
+Fortunately, as many modern infrastructures already deploy encryption and other
+crypto schemes by default, this ``passive solidarity'' is not a dream but a
+reachable reality, one that shows how mathematics can serve as a safeguard for
+democracy in an increasingly divided world.
+
+To end this section, cryptography not only flows towards my passion for purer
+philosophical understanding, because of its deep connection with theoretical
+computer science and mathematics, to which I turn in Section~\ref{sec.math},
+but also carries my hope to break free from the strong grasp of the tyrannies
+today, one that represents my free will which refuses to lose my agency and
+independence, in a world that too often seeks to reduce us into interchangable
+screws for the system.  
+
+\section{Mathematics: My purer philosophical pursuits} \label{sec.math}
 
 \bibliographystyle{acm}
 \bibliography{main.bib}

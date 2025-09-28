@@ -8,6 +8,10 @@ The chart below shows the areas that I currently have an interest in and work on
 - One topic derives (contains) another with an arrow. The arrows in the CS area are in black, whereas those in the Math area are in blue.
 - I tried many ways to place the Mathematics subgraph to the right but none worked. Thus, the current lines are a bit messy.
 
+If you have time, I strongly recommend you to read my interests in detail
+[inside the repo](interests/main.pdf), which I try hard to make enjoyable and
+exciting to read.
+
 ```mermaid
 flowchart LR
 	%% Primary general topic, general topic, primary subtopic, subtopic,
