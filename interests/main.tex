@@ -332,7 +332,7 @@ which we don't know are countable or not, and this leads to this important
 theorem, whose proof I present because it's short and raises questions about
 many things.
 \begin{CT}
-There is no bijection from any set $S$ to the set of all of its subsets
+There is no surjection from any set $S$ to the set of all of its subsets
 $\mathcal{P}(S)$. In Cantor's words, the cardinal number of $\mathcal{P}(S)$ is
 always larger than that of $S$.
 \end{CT}
@@ -367,12 +367,34 @@ all sets.
 		be larger than the former. On the other hand, $\mathcal{P}(\Omega)$,
 		being a set of sets, should be a subset of $\Omega$, a contradiction.
 	\item [Russell's paradox] When Russell was later analyzing Cantor's
-		theorem, he wondered what if $S$ itself was $\Omega$ and the supposedly
-		existed $f$ was the simple $f: s \mapsto s$. In that case, Cantor's
-		diagnoal subset $T$ becomes the famous form that we know of: $T : \{s
-		\mid s \notin s \}$.
+		theorem, he wondered what if $S$ itself was $\Omega$. Under the
+		assumption that all objects are sets, we thus have $S =
+		\mathcal{P}(S)$, and the simple $f: s \mapsto s$ serves as a bijection
+		between them. In that case, Cantor's diagnoal subset $T$ becomes the
+		famous form that we know of: $T := \{s \mid s \notin s \}$.
 \end{description}
 
+For Russell, his paradox was discovered at a bad time, when he was on his way
+of finishing his \emph{Principles of Mathematics}, and when he assumed that
+there was a universal set. He had hoped for a single, unified solution to the
+paradoxes of logic. But to his discouragement, after a few years of various
+attempts to fix them in the way he hoped, he was eventually forced to come to
+his ramified theory of types, using a hierachy of types to classify
+propositions \cite{companion.to.russell.tt}.
+
+Perhaps one reason why the paradoxes were so difficult to fix was that Cantor's
+diagonal method had revealed something deeply wrong about the previous
+mathematical reasoning. To avoid the paradoxes, one prominent work was
+Zermelo's axiomatic set theory (later refined by others) which restricted what
+sets can be. But there are still solved problems. Previously, mathematicians
+thought that they were working with real and complete math objects such as sets
+and numbers and that they were speaking truths of them as theorems. Since that
+had lead to contradictions, there must have been something wrong in the
+foundation of what we believed these objects to be or our logic. Even if we
+discard the previous foundation entirely and adopt the axiomatic theory as the
+new foundation, there must still be the matter of truth and meaning --- we
+cannot adopt the axiomatic set theory entirely formally as the new foundation,
+without a meaning about what we think is true or not \cite{kleeneitmm}.
 
 \bibliographystyle{acm}
 \bibliography{main.bib}
