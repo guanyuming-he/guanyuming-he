@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}Security: Introduction into my interests}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Secure Systems: Understanding the mechanisms}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}A high-level view of the Internet}{1}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Low-level system details}{3}{subsubsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.2}Data-driven analysis: Lights through artifical clouds}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Cryptography: A mathematical savior}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Mathematics: My purer philosophical pursuits}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Type theory and metamathematics}{7}{subsection.2.1}%

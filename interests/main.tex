@@ -1,8 +1,14 @@
 \documentclass{article}
 
+\usepackage{amsmath, amsthm, amssymb}
+% See amsthdoc p.~3
+\newtheorem*{CT}{Cantor's Theorem}
+
 \usepackage{hyperref}
 
 \begin{document}
+\tableofcontents
+
 \section{Security: Introduction into my interests}
 I believe security is a good entrance into my current interests. It awards both
 attention to detail and high-level systematic view; its subfields connects
@@ -295,8 +301,57 @@ independence, in a world that too often seeks to reduce us into interchangable
 screws for the system.  
 
 \section{Mathematics: My purer philosophical pursuits} \label{sec.math}
+As much as I am driven by real-life problems to understand systems better, the
+force behind my sometimes unusally deep dive into even more primitive
+principles is my strong desire to understand the foundational reasonings. In
+this section, I will describe how that has led me to explore the purer
+mathematical areas and my current interests in them.
 
-\subsection{Complexity theory and the theory of computation}
+\subsection{Type theory and metamathematics}
+In the manuals of various proof assistant languages, technical terms from type
+theory such as universe, sort, and introduction \& elimination rules, are
+frequently mentioned. For me who is driven to understand what's going on
+behind, contact with type theory is my destiny. Furthermore, I ventured deeper
+into its history and the philosophical doctrines it was born from.
+
+A good starting point is probably Cantor's work on his theory of abstract sets,
+particularly his ingenious abstraction of sets to cardinal numbers for their
+comparsion.  In 1638 Galileo noted that there is a bijection between the
+natural numbers and their squares: $f : n \mapsto n^2$, raising questions about
+the principle that the whole is greater than any of its parts. Cantor took this
+further to systematically compare sets, using bijections as the primary tool. 
+
+An essential mental construct that Cantor used was his diagnoal argument, which
+is often presented when proving the real numbers is not countable. Yet the
+central philosophical reasoning behind this argument applies to general sets
+which we don't know are countable or not, and this leads to this important
+theorem, whose proof I present because it's short and raises questions about
+many things.
+\begin{CT}
+There is no bijection from any set $S$ to the set of all of its subsets
+$\mathcal{P}(S)$. In Cantor's words, the cardinal number of $\mathcal{P}(S)$ is
+always larger than that of $S$.
+\end{CT}
+\begin{proof}
+When $S$ is empty, it is trival that there's no bijection between $\emptyset$
+and $\{\emptyset\}$. Then we consider when $S$ is not empty.
+
+Suppose for the sake of contradiction that there exists a bijection $f : S \to
+\mathcal{P}(S)$. The existence of this $f$ enables us to apply Cantor's
+diagonal argument, because now we can make sure the number of rows and columns
+are the same: arrange such a matrix that each column corresponds to an element
+$s \in S$, and each row is arranged to correspond to the sequence $f(s)$ for
+all $s$, in the same order as the columns. Along the diagonal, flip each
+element to define this subset $T \subset S$ such that $s \in T$ iff $s \notin
+f(s)$. 
+
+Because $f$ is a bijection, there is such $s_0$ that $f(s_0) = T$. Now we ask
+if $s_0 \in T$. Note that here we implicitly assume either $s_0 \in T$ or $s_0
+\notin T$. In either case, by definition of $T$, we will arrive at a
+contradiction. Thus, by \emph{reductio ad absurdum}, it is not the case
+that there exists such a $f$.
+
+\end{proof}
 
 
 \bibliographystyle{acm}
