@@ -130,21 +130,43 @@ memory, because an outer host, the hardware, has a vulnerability
 \cite{meltdown}. In fact, Meltdown touches more than logical flaws in hardware;
 it relies on the timing difference of cache accesses to extract information
 from it \cite{flush.reload}, one that directly connects with the physical
-world. Indeed, other than timing, a running secure systems leaks information in
-so many other ways such as power and radiation via physical effects, which
-opens to a large range of attacks \cite{side.channel.1, side.channel.2,
-side.channel.3, flush.reload}, collectively defined as side-channel attacks.
+world. At this point, I feel that I should also mention the Spectre attacks
+family \cite{spectre}, which, unlike Meltdown, does not exploit a clear logic
+bug or fault in the hardware. Instead, they work by observing the side effects
+of various implementations of speculative execution, which is arguably not a
+bug but simply a feature implemented without caution to how information may be
+leaked via the outer hosts.
 
-Although there's little hope to understand and model the universe thoroughly in
-one's life-time, a good understanding of the most common hosts, the operating
-systems and the hardware (including the architecture), will prove invaluable
-for me as a security researcher. Additionally, figuring out how to perform
-clever hacks (as in the hacking culture of MIT, not the mainstream meaning of
-cracking) based on knowledge of details of a system gives a great sense of
-achievement to me. Finally, this is one major place where cybersecurity
-connects directly with a broad range of other fields, including software
-engineering, systems architecture, networking, and physics.  These together
-contribute to my interest in the low-level details of secure systems.
+Indeed, there is little hope to understand and model the universe thoroughly
+and accurately in one's life-time, and one can expect endless discoveries of
+how an otherwise secure system can leak information in unexpected ways, such as
+power and radiation via physical effects, which opens to a large range of
+attacks \cite{side.channel.1, side.channel.2, side.channel.3, flush.reload},
+collectively defined as side-channel attacks.  Then, one must ask, is it futile
+trying to cope with every such possible attack? My opinion is that it depends
+on the current understanding of the whole cybersecurity community. One novel
+attack just discovered may be increasingly understood and gain popularity by
+the whole community and thus gradually become a necessary part every secure
+system designer should take into account. I view this as an everlasting
+dynamics where people continuously push the boundary of our understanding, and
+consequently expanding the requirements for all in the community.
+
+Therefore, a good understanding of the most common and well-understood hosts,
+the operating systems and the hardware (including the architecture), will be
+essential for me as a security researcher. Additionally, figuring out how to
+perform clever hacks (as in the hacking culture of MIT, not the mainstream
+meaning of cracking) based on knowledge of details of a system gives a great
+sense of achievement to me. Moreover, this continuous expansion of knowledge
+frontier carries a special implication in security. Whereas a mathematician is
+perfectly fine to specialize in one direction without knowing every details in
+other fields, a computer system can never be secure if only designed with one
+perspective. For now, a good system is usually designed by collaboration; and
+it will be a very interesting challenge to figure out how one single researcher
+can be empowered to do this task better; could the LLMs be a potential
+assistant who fills the knowledge gaps? Finally, this is one major place where
+cybersecurity connects directly with a broad range of other fields, including
+software engineering, systems architecture, networking, and physics.  These
+together contribute to my interest in the low-level details of secure systems.
 
 \subsection{Data-driven analysis: Lights through artifical clouds}
 Despite my intention to understand systems, many of them are not open for
@@ -273,6 +295,9 @@ independence, in a world that too often seeks to reduce us into interchangable
 screws for the system.  
 
 \section{Mathematics: My purer philosophical pursuits} \label{sec.math}
+
+\subsection{Complexity theory and the theory of computation}
+
 
 \bibliographystyle{acm}
 \bibliography{main.bib}
