@@ -314,12 +314,16 @@ frequently mentioned. For me who is driven to understand what's going on
 behind, contact with type theory is my destiny. Furthermore, I ventured deeper
 into its history and the philosophical doctrines it was born from.
 
-A good starting point is probably Cantor's work on his theory of abstract sets,
-particularly his ingenious abstraction of sets to cardinal numbers for their
-comparsion.  In 1638 Galileo noted that there is a bijection between the
-natural numbers and their squares: $f : n \mapsto n^2$, raising questions about
-the principle that the whole is greater than any of its parts. Cantor took this
-further to systematically compare sets, using bijections as the primary tool. 
+I have thought of a few ways to present this section, and in the end I decided
+that I will present it as a narrative of the basic history. If you share my
+curiosity for foundational reasonings, then after seeing the history I
+presented in my style, I believe you will also see my passion.  A good starting
+point is probably Cantor's work on his theory of abstract sets, particularly
+his ingenious abstraction of sets to cardinal numbers for their comparsion.  In
+1638 Galileo noted that there is a bijection between the natural numbers and
+their squares: $f : n \mapsto n^2$, raising questions about the principle that
+the whole is greater than any of its parts. Cantor took this further to
+systematically compare sets, using bijections as the primary tool. 
 
 An essential mental construct that Cantor used was his diagnoal argument, which
 is often presented when proving the real numbers is not countable. Yet the
@@ -333,25 +337,41 @@ $\mathcal{P}(S)$. In Cantor's words, the cardinal number of $\mathcal{P}(S)$ is
 always larger than that of $S$.
 \end{CT}
 \begin{proof}
-When $S$ is empty, it is trival that there's no bijection between $\emptyset$
+When $S$ is empty, it is trival that there's no surjection between $\emptyset$
 and $\{\emptyset\}$. Then we consider when $S$ is not empty.
 
-Suppose for the sake of contradiction that there exists a bijection $f : S \to
-\mathcal{P}(S)$. The existence of this $f$ enables us to apply Cantor's
+Suppose for now there exists a bijection $f : S \to
+\mathcal{P}(S)$. $f$'s being a bijection enables us to apply Cantor's
 diagonal argument, because now we can make sure the number of rows and columns
 are the same: arrange such a matrix that each column corresponds to an element
 $s \in S$, and each row is arranged to correspond to the sequence $f(s)$ for
 all $s$, in the same order as the columns. Along the diagonal, flip each
 element to define this subset $T \subset S$ such that $s \in T$ iff $s \notin
-f(s)$. 
+f(s)$. Although we used the bijection fact to get to this definition, the
+definition itself does not require a $f$'s being a bijection; it can be any
+function $f : S \to \mathcal{P}(S)$. But we will need it to be a surjection for
+the argument that follows. So we now demote $f$ to be any surjection.
 
-Because $f$ is a bijection, there is such $s_0$ that $f(s_0) = T$. Now we ask
+Because $f$ is a surjection, there is such $s_0$ that $f(s_0) = T$. Now we ask
 if $s_0 \in T$. Note that here we implicitly assume either $s_0 \in T$ or $s_0
 \notin T$. In either case, by definition of $T$, we will arrive at a
 contradiction. Thus, by \emph{reductio ad absurdum}, it is not the case
-that there exists such a $f$.
-
+that there exists such a surjection $f$.
 \end{proof}
+
+Cantor and Russell arrived at two similar paradoxes, both involving the set of
+all sets.
+\begin{description}
+	\item[Cantor's paradox] Consider the set of all sets $\Omega$ and its
+		power set $\mathcal{P}(\Omega)$. By Cantor's theorem, the latter should
+		be larger than the former. On the other hand, $\mathcal{P}(\Omega)$,
+		being a set of sets, should be a subset of $\Omega$, a contradiction.
+	\item [Russell's paradox] When Russell was later analyzing Cantor's
+		theorem, he wondered what if $S$ itself was $\Omega$ and the supposedly
+		existed $f$ was the simple $f: s \mapsto s$. In that case, Cantor's
+		diagnoal subset $T$ becomes the famous form that we know of: $T : \{s
+		\mid s \notin s \}$.
+\end{description}
 
 
 \bibliographystyle{acm}
