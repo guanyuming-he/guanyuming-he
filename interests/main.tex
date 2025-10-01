@@ -13,7 +13,10 @@
 I believe security is a good entrance into my current interests. It awards both
 attention to detail and high-level systematic view; its subfields connects
 directly with both theoretical and practical areas that fascinates me, and it
-offers effective tools to solve the imminent problems I face in real life. 
+offers effective tools to solve the imminent problems I face in real life. This
+section will take such a flow that the subfields of my interest will be first
+led to from real world problems and motivation, and then be explored with my
+philosophical pursuits.
 
 The term \emph{security} in computer science generally carries the sense of
 achieving \emph{security goals} through \emph{mechanisms or properties} of a
@@ -35,13 +38,6 @@ chatcontrolchildprotection}.
 I unfortunately has suffered from more aggressive attacks, primarily
 systematic, comprehensive, and far-reaching censorship \cite{internet.coup}
 \cite[Sect.~5]{chall.censor.circum}, because of my background.
-
-How my security goal of being able to exercise my human rights in the presence of
-these powerful adversaries drives my interests will be explained by the
-following subsections, some of which also describes how my more pure academic
-excitements are intertwined with this realistic drive. Finally, the last
-subsection, \ref{sec.crypto}, will lead the transition into the other areas of
-my interest.
 
 \subsection{Secure Systems: Understanding the mechanisms} 
 \label{sec.secure.systems}
@@ -300,6 +296,70 @@ today, one that represents my free will which refuses to lose my agency and
 independence, in a world that too often seeks to reduce us into interchangable
 screws for the system.  
 
+\section{Software engineering: My earliest and continuing passion}
+\subsection{Software construction}
+The seed for my passion in questioning how things should be built and be amazed
+at how complex things interact with each other when assembled together, was
+there in me long before I had an idea of what research or the academia were. I
+was obsessed with creating my own video games, what I hoped would be my
+sanctuary from my miserable life. My unsuspectingly ambitious goal of starting
+from building a game engine unsurprisingly failed, but it did introduce me to
+the book \emph{Game Engine Architecture} \cite{game.engine.arch}, which isn't
+academically significant, but its contents made me realize that I was more into
+how things work in the engine such as how threads coordinate with each other
+than into actually making a game.
+
+This interest of figuring out how a complex system work and how to build such
+one, leads me into learning various software engineering principles, in
+particular, those of Liskov \cite{liskov.adt, liskov.subtype}, learning them
+deeper when offered by my undergraduate courses, and applying some of them in
+all of my big projects, since I got to know them. With all these principles,
+engineering of large software systems still remains a big challenge,
+particularly in interface design, separation of components, and all that we
+still have no fixed rules to follow. In other words, large systems engineering
+largely remains an art instead of a science \cite{no.silver.bullet,
+prospect.eng.discipline.software}. Could it become a science one day, governed
+by general principles that guide us toward optimal software systems? That is an
+intriguing question I aspire to explore while continuing to construct software
+in the following years.
+
+\subsection{Formal methods/verification}
+Many software engineering principles are concerned with mistakes made by
+humans. Not only do we try to minimize bugs from programs, we also
+need to reduce them from the specification or requirements of the software.
+Therefore, formalize the specification and verify that the software built
+indeed satisfies it could be seen as an ultimate way to eliminate bugs
+\cite{hoare.axiomatic.prog}. 
+
+Perhaps unsurprisingly, the industry has a low usage of fully verified software
+\cite{formal.methods.underuse}, since the business dynamics changes rapidly,
+and approaches that allow quick iteration of software, such as agile
+development, are much more preferred \cite{agile.se}. However, even in the
+academia, formal verification is not frequent, outside of critical areas. One
+central reason could be that formalization of software is too time consuming
+\cite{formal.methods.underuse}; as a price of having reduced software logic
+into primitive steps, more of such steps are required.
+
+That might seem to be an essential difficulty preventing the wide-adoption of
+formal methods in software engineering, but another way of dealing with the
+problem is increasing the formalization speed. One way is to formally build
+more advanced and verified steps out of primitive steps and define them in
+\emph{proof assistants}. For example, Coq (Rocq) allows one to build custom
+tactics and use a meta-language such as Ltac to manipulate tactics at a higher
+level \cite{coq.manual}. Furthermore, LLMs, the current hot topic, have the
+capacity to output seemingly correct formalization at high speed
+\cite{llm.gen.proof}.  Combined with proof assistants, which can automatically
+verify the correctness of the output, we could have the potential to greatly
+speed up not only formalization of software, but that of informal mathematical
+proofs found everywhere in mathematical texts, if the product of the correct
+rate and the output speed of LLMs could surpass that of ours.
+
+\subsection[Free software, free society]{
+Free software, free society\protect\footnotemark}
+\footnotetext{The title here is the book title of the essays collection of
+Dr.~Richard Stallman \cite{stallman.essays}.}
+
+
 \section{Mathematics: My purer philosophical pursuits} \label{sec.math}
 As much as I am driven by real-life problems to understand systems better, the
 force behind my sometimes unusally deep dive into even more primitive
@@ -394,7 +454,7 @@ foundation of what we believed these objects to be or our logic. Even if we
 discard the previous foundation entirely and adopt the axiomatic theory as the
 new foundation, there must still be the matter of truth and meaning --- we
 cannot adopt the axiomatic set theory entirely formally as the new foundation,
-without a meaning about what we think is true or not \cite{kleeneitmm}.
+without a meaning about what we think is true or not \cite[Ch.~12]{kleeneitmm}.
 
 \bibliographystyle{acm}
 \bibliography{main.bib}
