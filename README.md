@@ -7,7 +7,7 @@ interests below, especially the longer version I have been developing [inside
 the repo](interests/main.pdf)?
 
 If you are interested in working with me as my adviser/supervisor, I would be
-very happy to [hear about it](#reach me).
+very happy to [hear about it](#reach-me).
 
 # Interests and areas of work
 ## Current interests
