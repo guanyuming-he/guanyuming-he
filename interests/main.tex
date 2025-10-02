@@ -1,10 +1,11 @@
-\documentclass{article}
+\documentclass[10pt]{article}
 
 \usepackage{amsmath, amsthm, amssymb}
 % See amsthdoc p.~3
 \newtheorem*{CT}{Cantor's Theorem}
 
 \usepackage{hyperref}
+\usepackage{xurl}
 
 \begin{document}
 \tableofcontents
@@ -24,7 +25,7 @@ the document to see the whole picture of my ambition and passion. Finally, to
 get the latest version of the document, go to 
 \url{https://github.com/guanyuming-he/guanyuming-he/blob/main/interests/main.pdf}.
 
-\section{Security: Introduction into my interests}
+\section[Security]{Security: Introduction into my interests}
 I believe security is a good entrance into my current interests. It awards both
 attention to detail and high-level systematic view; its subfields connects
 directly with both theoretical and practical areas that fascinates me, and it
@@ -54,7 +55,8 @@ I unfortunately has suffered from more aggressive attacks, primarily
 systematic, comprehensive, and far-reaching censorship \cite{internet.coup}
 \cite[Sect.~5]{chall.censor.circum}, because of my background.
 
-\subsection{Secure Systems: Understanding the mechanisms} 
+\subsection[Secure Systems]{
+Secure Systems: Understanding the mechanisms} 
 \label{sec.secure.systems}
 \subsubsection{A high-level view of the Internet}
 A high-level understanding of how the digital infrastructures work is essential
@@ -185,7 +187,8 @@ cybersecurity connects directly with a broad range of other fields, including
 software engineering, systems architecture, networking, and physics.  These
 together contribute to my interest in the low-level details of secure systems.
 
-\subsection{Data-driven analysis: Lights through artifical clouds}
+\subsection[Data-driven analysis]{
+Data-driven analysis: Lights through artifical clouds}
 Despite my intention to understand systems, many of them are not open for
 analysis, for various reasons. In particular, the aforementioned systems for
 digital surveillance and censorship are not only proprietary but often state
@@ -212,7 +215,8 @@ enough to know these works, could know what we are facing everyday better.
 Conversely, I strongly hope to contribute to the free-side of the arms race,
 making the free Internet reachable to everyone.
 
-\subsection{Cryptography: A mathematical savior} \label{sec.crypto}
+\subsection[Cryptography]{Cryptography: A mathematical savior}
+\label{sec.crypto}
 Security is often described as an arms race --- that who controls more
 resources tends to discover more vulnerabilities, devise more attacks, and
 harden their systems more. Where is hope, then, when most self-censor and give
@@ -311,7 +315,8 @@ today, one that represents my free will which refuses to lose my agency and
 independence, in a world that too often seeks to reduce us into interchangable
 screws for the system.  
 
-\section{Software engineering: My earliest and continuing passion}
+\section[Software engineering]{
+Software engineering: My earliest and continuing passion}
 \subsection{Software construction}
 The seed for my passion in questioning how things should be built and be amazed
 at how complex things interact with each other when assembled together, was
@@ -385,27 +390,56 @@ computers?
 Unfortunately, the answer is no for proprietary software. Stallman
 has a number of nice essays on this topic \cite{stallman.essays}, and I would
 just use a simple analogy here: using proprietary software is like entrusting
-one's money to another person, whose operations are obaque, whose decisions one
+one's money to another person, whose operations are opaque, whose decisions one
 has little or no influence on, whose interests are mainly profit, and who
 otherwise has no connection with one. Clearly, no sane person would choose to
 do that.  The core problem of proprietary software is that via them the
 developers impose such an unjust power imbalance over its users, which tends to
 corrupt and lead to mistreatment of users, as history has repeatedly shown us.
 
-By starting the free software movement, Stallman tried to give the power back
-to users by respecting the users' essential
-freedoms \cite[Essay~1]{stallman.essays}. His movement has had remarkable
-achievements, but there are deep issues about the society that free software
-alone cannot solve. The concept that is most popular today is open source
-software, the form that most attribute to the \emph{Cathedral and the Bazaar}
-essay \cite{cathedral.bazaar}, but which, according to Stallman, actually was a
-group of the original free software community that deviated from the core
-philosophy \cite[Essay~14]{stallman.essays}.
+By launching the free software movement, Stallman sought to restore power to
+users by securing their essential freedoms \cite[Essay~1]{stallman.essays}. The
+movement has achieved remarkable successes, yet today it still faces serious
+obstacles. An prominent example is the ideology of open source. Often
+associated with Raymond’s The Cathedral and the Bazaar \cite{cathedral.bazaar},
+open source in fact emerged from within the free software community as a
+deviation from its core philosophy. As Stallman emphasizes, ``The term `open
+source' quickly became associated with ideas and arguments based only on
+practical values, such as making or having powerful, reliable software''
+\cite[Essay~14]{stallman.essays}. By shifting focus from freedom to utility,
+open source has obscured the very principles the free software movement was
+founded to protect.
 
-\emph{Unfinished.}
+There are two significant problems of the current situation of open source. The
+first is about the licenses. Some licenses only open the source code but
+prevents unauthorized modification and sharing; some others grant total
+access but fail to prevent the work being stolen (i.e.\ creating a proprietary
+fork from it). 
+
+The second problem concerns the nature of freedom itself. Freedom is not
+passive; it requires active exercise. Many users of free or open source
+software almost never inspect, modify, or share the code
+\cite{open.source.contrib}, thereby remaining as dependent on developers as
+users of proprietary systems. Their situation differs only in that the
+developers of free software may act more ethically and the part of the users
+who do exercise their freedoms can somewhat prevent the developers from going
+rogue. Yet the open source movement's deliberate avoidance of freedom as a
+guiding value undermines awareness of it within the broader community. As
+practical values dominate, free software communities risk being taken over by
+open source members. Even worse are corporate-led open source projects such as
+Microsoft’s VSCode: sustained by contributions from the whole community, but
+mostly directed by company employees whose decisions reflect corporate
+interests \cite{corporate.open.source, fake.open.source}. The result is
+software that strengthens corporate power while exploiting users (e.g.\ VSCode
+has built-in telemetry that is difficult to disable), building on top of
+people's free (in terms of price) contribution. I see this as a profound yet
+subtle betrayal of the free software ethics, and addressing this challenge is
+essential as computing freedom is increasingly important in achieving a free
+society.
 
 
-\section{Mathematics: My purer philosophical pursuits} \label{sec.math}
+\section[Mathematics]{Mathematics: My purer philosophical pursuits}
+\label{sec.math}
 As much as I am driven by real-life problems to understand systems better, the
 force behind my sometimes unusally deep dive into even more primitive
 principles is my strong desire to understand the foundational reasonings. In
