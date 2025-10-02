@@ -1,5 +1,14 @@
 ## Current status: MSc student (degree expected in Nov 2025).
 
+## Looking for PhD opportunities
+I am currently looking for full-time and fully-funded PhD openings that start
+in 2026. If you are looking for PhD students, why not take a look at my
+interests below, especially the longer version I have been developing [inside
+the repo](interests/main.pdf)?
+
+If you are interested in working with me as my adviser/supervisor, I would be
+very happy to [hear about it](#reach me).
+
 # Interests and areas of work
 ## Current interests
 The chart below shows the areas that I currently have an interest in and work on.
