@@ -132,8 +132,8 @@ solution that welcomes centralization. On the other hand, the poor scalability
 of simple sharing schemes of a link (usually via a switch) necessitates a
 better scheme to extend a small network globally. To achieve this, the Internet
 relies heavily on delegation and distributed structures, such as topological
-divisions in its address and delegation of most routing responsibilities to
-each individual networks (e.g.\ ISPs). Its BGP, opearing in between them, is
+divisions of its address space and delegation of most routing responsibilities
+to each individual networks (e.g.\ ISPs). Its BGP, opearing in between them, is
 mainly concerned exchanging reachability information, whereas its IGPs handle
 routing paths and allow different networks to implement different routing
 policies.
@@ -225,7 +225,7 @@ Security is often described as an arms race --- that who controls more
 resources tends to discover more vulnerabilities, devise more attacks, and
 harden their systems more. Where is hope, then, when most self-censor and give
 up fighting the regime \cite{self.censor.1, self.censor.2, self.censor.3}  and
-even fewer of the fighters have sufficient skills to join in the crypto war
+even fewer of the fighters have sufficient skills to join in the security war
 \cite{defenders.lack.skills.1, defenders.lack.skills.2}?
 
 I believe one solution to what might sound like a power struggle lies within
@@ -278,7 +278,7 @@ number of such discoveries in addition, and here's a list of some of them.
 	very desirable property for many years. Although many earliest public-key
 	encryption schemes, such as RSA \cite{rsa} and ElGamal \cite{elgamal},
 	already natively supported limited homomorphism like modular
-	multiplication, by their design, the first full scheme that allowed
+	multiplication by their design, the first full scheme that allowed
 	arbitrary computation on encrypted data was only proposed in 2009
 	\cite{first.full.homo}.
 \end{description}
@@ -290,7 +290,7 @@ strong adversaries, no matter the power difference between them. The other is
 how they help minimize the trust required to perform global-level of
 collaboration that involves people from vastly different backgrounds and
 beliefs; such a collaboration that would typically require a strong central
-authority to organize, now only requires the participate to trust a few
+authority to organize, now only requires the participants to trust a few
 foundamental assumptions of cryptography.
 
 Personally, I would go a step further. I believe modern cryptography offers not
@@ -324,49 +324,52 @@ Software engineering: My earliest and continuing passion}
 \subsection{Software construction}
 The seed for my passion in questioning how things should be built and be amazed
 at how complex things interact with each other when assembled together, was
-there in me long before I had an idea of what research or the academia were. I
-was obsessed with creating my own video games, what I hoped would be my
-sanctuary from my miserable life. My unsuspectingly ambitious goal of starting
-from building a game engine unsurprisingly failed, but it did introduce me to
-the book \emph{Game Engine Architecture} \cite{game.engine.arch}, which isn't
-academically significant, but its contents made me realize that I was more into
-how things work in the engine such as how threads coordinate with each other
-than into actually making a game.
+there in me long before I had an idea of what research or the academia were. In
+high school, I was obsessed with creating my own video games, what I hoped
+would be my sanctuary from my then miserable life. My unsuspectingly ambitious
+goal of starting from building a game engine unsurprisingly failed, but it did
+introduce me to the book \emph{Game Engine Architecture}
+\cite{game.engine.arch}, which isn't academically significant, but its contents
+made me realize that I was more into how things work in the engine such as how
+threads coordinate with each other than into actually making a game.
 
 This interest of figuring out how a complex system work and how to build such
 one, leads me into learning various software engineering principles, in
 particular, those of Liskov \cite{liskov.adt, liskov.subtype}, learning them
 deeper when offered by my undergraduate courses, and applying some of them in
-all of my big projects, since I got to know them. With all these principles,
-engineering of large software systems still remains a big challenge,
-particularly in interface design, separation of components, and all that we
-still have no fixed rules to follow. In other words, large systems engineering
-largely remains an art instead of a science \cite{no.silver.bullet,
-prospect.eng.discipline.software}. Could it become a science one day, governed
-by general principles that guide us toward optimal software systems? That is an
+all of my big projects, since I got to know them. 
+
+With all these principles, engineering of large software systems still remains
+a big challenge, particularly in interface design, separation of components,
+and all that we still have no fixed rules to follow. In other words, large
+systems engineering largely remains an art instead of a science
+\cite{no.silver.bullet, prospect.eng.discipline.software}. Could it become a
+science one day, governed by well-established rules that guide us toward
+optimal software systems in all or at least most situations? That is an
 intriguing question I aspire to explore while continuing to construct software
 in the following years.
 
 \subsection{Formal methods/verification}
 Many software engineering principles are concerned with mistakes made by
-humans. Not only do we try to minimize bugs from programs, we also
-need to reduce them from the specification or requirements of the software.
-Therefore, formalize the specification and verify that the software built
-indeed satisfies it could be seen as an ultimate way to eliminate bugs
+humans. Not only do we try to minimize bugs from programs, we also need to
+reduce them from the specification or requirements of the software.  Therefore,
+formalizing the specification and verifying that the software built indeed
+satisfies it could be seen as an ultimate way to eliminate bugs
 \cite{hoare.axiomatic.prog}. 
 
+\subsubsection{The speed problem of formalization}
 Perhaps unsurprisingly, the industry has a low usage of fully verified software
 \cite{formal.methods.underuse}, since the business dynamics changes rapidly,
 and approaches that allow quick iteration of software, such as agile
 development, are much more preferred \cite{agile.se}. However, even in the
 academia, formal verification is not frequent, outside of critical areas. One
-central reason could be that formalization of software is too time consuming
-\cite{formal.methods.underuse}; as a price of having reduced software logic
-into primitive steps, more of such steps are required.
+central reason could be that formalization of software is simply too
+time-consuming \cite{formal.methods.underuse}; as a price of having reduced
+software logic into primitive steps, much more of such steps are required.
 
 That might seem to be an essential difficulty preventing the wide-adoption of
 formal methods in software engineering, but another way of dealing with the
-problem is increasing the formalization speed. One way is to formally build
+problem is increasing the formalization speed. One approach is to formally build
 more advanced and verified steps out of primitive steps and define them in
 \emph{proof assistants}. For example, Coq (Rocq) allows one to build custom
 tactics and use a meta-language such as Ltac to manipulate tactics at a higher
@@ -374,9 +377,39 @@ level \cite{coq.manual}. Furthermore, LLMs, the current hot topic, have the
 capacity to output seemingly correct formalization at high speed
 \cite{llm.gen.proof}.  Combined with proof assistants, which can automatically
 verify the correctness of the output, we could have the potential to greatly
-speed up not only formalization of software, but that of informal mathematical
+speed up formalization of not only software, but also of informal mathematical
 proofs found everywhere in mathematical texts, if the product of the correct
 rate and the output speed of LLMs could surpass that of ours.
+
+\subsubsection{How formalization may change collaboration}
+One interesting application of proof assistants is Massot's \texttt{Blueprint}
+\cite{massot.blueprint}. It is mostly a dependent graph that links each piece
+(lemma) of a big proof as its nodes, which one can click on to go to its
+rendered \LaTeX, \LaTeX\ source, and Lean (a proof assistant) source. Depending
+on a node's formalization status, it's displayed differently in the graph
+\cite{tao.blueprint.post}. Beside being used in various math projects (see its
+README), it also has the potential to support building interactive math
+textbooks for students.
+
+In another direction, the deep trust that was previously required for each
+collaborator's math skills, can now be reduced by automatic verification with
+proof assistants. Thus, whereas a research-level math project used to be done
+by a few professional mathematicians only, such one now can be instead
+conducted this way: 1) the few expert lead mathematicians design a whole picture
+of the theorem to prove and divide it into pieces 2) people, even those who are
+not professional mathematicians, can claim pieces that they think they can
+solve. 3) when they give solutions, it's the proof assistants' job to verify
+them. As a proof of concept, Tao has led a pilot project conducted such way
+\cite{tao.pilot.project}.
+
+While most software engineering projects require far less trust than a
+math project does, projects of engineering critical secure systems could
+still demand a high-level of trust and thus benefit from proof assistants in
+the same way as math projects above. In particular, could the development of a
+fully-verified and quite complete (in the sense of containing drivers, file
+systems, and other components, unlike a microkernel) OS kernel be possible, if
+collaborated this way? That would be an interesting question to answer in my
+future research.
 
 \subsection[Free software, free society]{
 Free software, free society\protect\footnotemark}
@@ -437,8 +470,8 @@ interests \cite{corporate.open.source, fake.open.source}. The result is
 software that strengthens corporate power while exploiting users (e.g.\ VSCode
 has built-in telemetry that is difficult to disable), building on top of
 people's free (in terms of price) contribution. I see this as a profound yet
-subtle betrayal of the free software ethics, and addressing this challenge is
-essential as computing freedom is increasingly important in achieving a free
+subtle undermining of the free software movement, and addressing this challenge
+is essential as computing freedom is increasingly important in achieving a free
 society.
 
 
