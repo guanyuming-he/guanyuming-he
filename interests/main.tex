@@ -17,12 +17,12 @@ subsection, describing my interest for a subfield of it, will generally give my
 motivation for studying that field and usually end with a current open problem
 that I aim to solve during my research in that subfield.
 
-If you are a professor, I might have sent part or modified version of this
-document to you, as my statement of interest. Generally, you only need to read
-the subfields that I want to be working in with you, from the above table of
-contents. If you have time, however, I still recommend a linear read through
-the document to see the whole picture of my ambition and passion. Finally, to
-get the latest version of the document, go to 
+If you are a professor, I might have sent the whole, a part, or a modified
+version of this document to you, as my statement of interest. Generally, you
+only need to read the subfields that I want to be working in with you, from the
+above table of contents. If you have time, however, I still recommend a linear
+read through the document to see the whole picture of my ambition and passion.
+Finally, to get the latest version of the document, go to
 \url{https://github.com/guanyuming-he/guanyuming-he/blob/main/interests/main.pdf}.
 
 \section[Security]{Security: Introduction into my interests}
@@ -32,7 +32,7 @@ directly with both theoretical and practical areas that fascinates me, and it
 offers effective tools to solve the imminent problems I face in real life. This
 section will take such a flow that the subfields of my interest will be first
 led to from real world problems and motivation, and then be explored with my
-philosophical pursuits.
+more academical pursuits.
 
 The term \emph{security} in computer science generally carries the sense of
 achieving \emph{security goals} through \emph{mechanisms or properties} of a
@@ -53,11 +53,76 @@ opinions against such measures \cite{keys.under.doormats, bugs.in.our.pockets,
 chatcontrolchildprotection}.
 I unfortunately has suffered from more aggressive attacks, primarily
 systematic, comprehensive, and far-reaching censorship \cite{internet.coup}
-\cite[Sect.~5]{chall.censor.circum}, because of my background.
+\cite[Sect.~5]{chall.censor.circum}, because of my background. In any case,
+these threats present one of the major real world problems I aim to address by
+my research in security.
 
 \subsection[Secure Systems]{
 Secure Systems: Understanding the mechanisms} 
 \label{sec.secure.systems}
+
+\subsubsection{Low-level system details}
+Beside the threat model, when we talk about security, we also implicitly assume
+another model, environment, or host, that encapsulates the problem. For
+instance, in the context of isolation, 
+\begin{itemize}
+	\item The host that encapsulates process isolation is the operating system
+		kernel.
+	\item The host that encapsulates virtual machine isolation is the
+		hypervisor, often including hardware support.
+	\item The host that encapsulates air-gapped machine isolation is the
+		physical world, or more abstractly, the physical laws.
+\end{itemize} 
+These hosts form a hierarchy. For instance, processes inside an OS may run
+inside a virtual machine, on hardware, within the physical world.
+
+As a result, a security researcher has to understand these hosts, each to a
+different degree, depending on how secure she wants her systems to be. Even if
+a system is formally verified to be secure within a host, it can still be
+attacked from interactions with an outer host. That is well examplified by
+the Meltdown attack, which breaks both kernel and hypervisor's isolation of
+memory, because an outer host, the hardware, has a vulnerability
+\cite{meltdown}. In fact, Meltdown touches more than logical flaws in hardware;
+it relies on the timing difference of cache accesses to extract information
+from it \cite{flush.reload}, one that directly connects with the physical
+world. At this point, I feel that I should also mention the Spectre attacks
+family \cite{spectre}, which, unlike Meltdown, does not exploit a clear logic
+bug or fault in the hardware. Instead, it work by observing the side effects
+of various implementations of speculative execution, which is arguably not a
+bug but simply a feature implemented without caution to how information may be
+leaked via the outer hosts.
+
+Indeed, there is little hope to understand and model the universe thoroughly
+and accurately in one's life-time, and one can expect endless discoveries of
+how an otherwise secure system can leak information in unexpected ways, such as
+power and radiation via physical effects, which opens to a large range of
+attacks \cite{side.channel.1, side.channel.2, side.channel.3, flush.reload},
+collectively defined as side-channel attacks.  Then, one must ask, is it futile
+trying to cope with every such possible attack? My opinion is that it depends
+on the current understanding of the whole cybersecurity community. One novel
+attack just discovered may be increasingly understood and gain popularity by
+the whole community and thus gradually become a necessary part every secure
+system designer should take into account. I view this as an everlasting
+dynamics where people continuously push the boundary of our understanding, and
+consequently expanding the requirements for all in the community.
+
+Therefore, a good understanding of the most common and well-understood hosts,
+the operating systems and the hardware (including the architecture), will be
+essential for me as a security researcher. Additionally, figuring out how to
+perform clever hacks (as in the hacking culture of MIT, not the mainstream
+meaning of cracking) based on knowledge of details of a system gives a great
+sense of achievement to me. Moreover, this continuous expansion of knowledge
+frontier carries a special implication in security. Whereas a mathematician is
+perfectly fine to specialize in one direction without knowing every details in
+other fields, a computer system can never be secure if only designed with one
+perspective. For now, a good system is usually designed by collaboration; and
+it will be a very interesting challenge to figure out how one single researcher
+can be empowered to do this task better; could the LLMs be a potential
+assistant who fills the knowledge gaps? Finally, this is one major place where
+cybersecurity connects directly with a broad range of other fields, including
+software engineering, systems architecture, networking, and physics.  These
+together contribute to my interest in the low-level details of secure systems.
+
 \subsubsection{A high-level view of the Internet}
 A high-level understanding of how the digital infrastructures work is essential
 to understand what enables these threats. The current networking infrastructure,
@@ -100,7 +165,7 @@ state-level censor could easily abuse its local authority to target them. A few
 regimes are notorious to have blocked a vast amount of them to various
 extents, employing complicated passive analysis and active probing techniques
 \cite{censor.block.1, censor.block.2,censor.block.3, censor.block.4,
-censor.block.5,censor.block.6},
+censor.block.5,censor.block.6}.
 Although a state would need to consider the collatoral damage, a totalitarian
 regime would not hesitate to block an entire protocol before it can figure out
 how to block it selectively \cite{selective.block.1, censor.block.4}. 
@@ -119,73 +184,12 @@ to use the maximal bandwidth the ISP sells to them, cogestion and throttling
 occur, and the users, not the ISP, ultimately pay the price --- this is also
 the same kind of injustice imposed by airlines who oversell tickets.
 
-The question of how to build protocols and systems that preserves one's rights
+The question of how to build protocols and systems that preserve one's rights
 on top of the Internet that powerful adversaries control, fighting against
 surveillance, censorship, and overall other unfair practices which the
 infrastructures of the current networks happen to enable, is central to my
 interest in secure distributed systems.
 
-\subsubsection{Low-level system details}
-Beside the threat model, when we talk about security, we also implicitly assume
-another model, environment, or host, that encapsulates the problem. For
-instance, in the context of isolation, 
-\begin{itemize}
-	\item The host that encapsulates process isolation is the operating system
-		kernel.
-	\item The host that encapsulates virtual machine isolation is the
-		hypervisor, often including hardware support.
-	\item The host that encapsulates air-gapped machine isolation is the
-		physical world, or more abstractly, the physical laws.
-\end{itemize} 
-These hosts form a hierarchy. For instance, processes inside an OS may run
-inside a virtual machine, on hardware, within the physical world.
-
-As a result, a security researcher has to understand these hosts, each to a
-different degree, depending on how secure she wants her systems to be. Even if
-a system is formally verified to be secure within a host, it can still be
-attacked from interactions with an outer host. That is well examplified by
-the Meltdown attack, which breaks both kernel and hypervisor's isolation of
-memory, because an outer host, the hardware, has a vulnerability
-\cite{meltdown}. In fact, Meltdown touches more than logical flaws in hardware;
-it relies on the timing difference of cache accesses to extract information
-from it \cite{flush.reload}, one that directly connects with the physical
-world. At this point, I feel that I should also mention the Spectre attacks
-family \cite{spectre}, which, unlike Meltdown, does not exploit a clear logic
-bug or fault in the hardware. Instead, they work by observing the side effects
-of various implementations of speculative execution, which is arguably not a
-bug but simply a feature implemented without caution to how information may be
-leaked via the outer hosts.
-
-Indeed, there is little hope to understand and model the universe thoroughly
-and accurately in one's life-time, and one can expect endless discoveries of
-how an otherwise secure system can leak information in unexpected ways, such as
-power and radiation via physical effects, which opens to a large range of
-attacks \cite{side.channel.1, side.channel.2, side.channel.3, flush.reload},
-collectively defined as side-channel attacks.  Then, one must ask, is it futile
-trying to cope with every such possible attack? My opinion is that it depends
-on the current understanding of the whole cybersecurity community. One novel
-attack just discovered may be increasingly understood and gain popularity by
-the whole community and thus gradually become a necessary part every secure
-system designer should take into account. I view this as an everlasting
-dynamics where people continuously push the boundary of our understanding, and
-consequently expanding the requirements for all in the community.
-
-Therefore, a good understanding of the most common and well-understood hosts,
-the operating systems and the hardware (including the architecture), will be
-essential for me as a security researcher. Additionally, figuring out how to
-perform clever hacks (as in the hacking culture of MIT, not the mainstream
-meaning of cracking) based on knowledge of details of a system gives a great
-sense of achievement to me. Moreover, this continuous expansion of knowledge
-frontier carries a special implication in security. Whereas a mathematician is
-perfectly fine to specialize in one direction without knowing every details in
-other fields, a computer system can never be secure if only designed with one
-perspective. For now, a good system is usually designed by collaboration; and
-it will be a very interesting challenge to figure out how one single researcher
-can be empowered to do this task better; could the LLMs be a potential
-assistant who fills the knowledge gaps? Finally, this is one major place where
-cybersecurity connects directly with a broad range of other fields, including
-software engineering, systems architecture, networking, and physics.  These
-together contribute to my interest in the low-level details of secure systems.
 
 \subsection[Data-driven analysis]{
 Data-driven analysis: Lights through artifical clouds}
