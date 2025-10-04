@@ -7,6 +7,10 @@
 \usepackage{hyperref}
 \usepackage{xurl}
 
+% Only include additional info to compile if I am giving the document
+% as a personal statement in my PhD applications.
+\includeonly{}
+
 \begin{document}
 \tableofcontents
 
@@ -19,11 +23,13 @@ that I aim to solve during my research in that subfield.
 
 If you are a professor, I might have sent the whole, a part, or a modified
 version of this document to you, as my statement of interest. Generally, you
-only need to read the subfields that I want to be working in with you, from the
+only need to read the subfields that I want to be working in with you; see the
 above table of contents. If you have time, however, I still recommend a linear
 read through the document to see the whole picture of my ambition and passion.
 Finally, to get the latest version of the document, go to
 \url{https://github.com/guanyuming-he/guanyuming-he/blob/main/interests/main.pdf}.
+
+\part{My academic interests}
 
 \section[Security]{Security: Introduction into my interests}
 I believe security is a good entrance into my current interests. It awards both
@@ -43,7 +49,7 @@ security against an omnipotent adversary.
 Unlike in math, one cannot arbitrarily wiggle the threat model to one's desire.
 On the contrary, one's rights are increasingly threatened by the
 powerful digitally \cite{eu.digital.1, eu.digital.2, internet.shutdown.2024}. A
-prominent example is the continuous push for exceptional access to to people's
+prominent example is the continuous push for exceptional access to people's
 data and communication in various forms by governments\footnote{ For instance,
 	EU revived the \href{
 https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM\%3A2022\%3A209\%3AFIN}
@@ -450,8 +456,8 @@ founded to protect.
 There are two significant problems of the current situation of open source. The
 first is about the licenses. Some licenses only open the source code but
 prevents unauthorized modification and sharing; some others grant total
-access but fail to prevent the work being stolen (i.e.\ creating a proprietary
-fork from it). 
+access but fail to prevent the work from being stolen (i.e.\ creating a
+proprietary fork from it). 
 
 The second problem concerns the nature of freedom itself. Freedom is not
 passive; it requires active exercise. Many users of free or open source
@@ -573,6 +579,8 @@ cannot adopt the axiomatic set theory entirely formally as the new foundation,
 without a meaning about what we think is true or not \cite[Ch.~12]{kleeneitmm}.
 
 \emph{Unfinished.}
+
+\include{additional}
 
 \bibliographystyle{acm}
 \bibliography{main.bib}
