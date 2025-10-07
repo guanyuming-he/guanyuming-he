@@ -9,7 +9,7 @@
 
 % Only include additional info to compile if I am giving the document
 % as a personal statement in my PhD applications.
-\includeonly{}
+\includeonly{additional}
 
 \begin{document}
 \tableofcontents
@@ -38,7 +38,7 @@ directly with both theoretical and practical areas that fascinates me, and it
 offers effective tools to solve the imminent problems I face in real life. This
 section will take such a flow that the subfields of my interest will be first
 led to from real world problems and motivation, and then be explored with my
-more academical pursuits.
+more academical and philosophical pursuits.
 
 The term \emph{security} in computer science generally carries the sense of
 achieving \emph{security goals} through \emph{mechanisms or properties} of a
@@ -47,27 +47,41 @@ threat model has to be carefully chosen and reviewed; there would be no
 security against an omnipotent adversary.
 
 Unlike in math, one cannot arbitrarily wiggle the threat model to one's desire.
-On the contrary, one's rights are increasingly threatened by the
-powerful digitally \cite{eu.digital.1, eu.digital.2, internet.shutdown.2024}. A
-prominent example is the continuous push for exceptional access to people's
-data and communication in various forms by governments\footnote{ For instance,
-	EU revived the \href{
+On the contrary, one has little control to how one's digital rights are
+treated, which are increasingly threatened (e.g. \cite{eu.digital.1,
+eu.digital.2, internet.shutdown.2024}). A more prominent example is the
+continuous push for exceptional access to people's data and communication in
+various forms by governments\footnote{ For a recent instance, EU revived the
+\href{
 https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM\%3A2022\%3A209\%3AFIN}
 {Chat Control} proposal in 2025. See \url{
 https://eutechloop.com/time-is-running-chat-control/}.}, ignoring expert
 opinions against such measures \cite{keys.under.doormats, bugs.in.our.pockets,
-chatcontrolchildprotection}.
-I unfortunately has suffered from more aggressive attacks, primarily
-systematic, comprehensive, and far-reaching censorship \cite{internet.coup}
-\cite[Sect.~5]{chall.censor.circum}, because of my background. In any case,
-these threats present one of the major real world problems I aim to address by
-my research in security.
+chatcontrolchildprotection}. Prof.~Anderson has coined the fight for the
+control of cryptography (thus a large portion of peoples' digital rights)
+between governments and all who try to fight back using the term ``(thirty
+years of) crypto war'' \cite{anderson.freedom}. In this section, you will see a
+similar tone to Prof.~Anderson's honesty which I admire --- I aim to approach
+my work with the same honesty --- to confront problems as they are, to fight
+against injustice even when inconvenient, and to maintain my integrity
+throughout my academic journey.  In fact, Prof.~Anderson's section
+\emph{Privacy and freedom issues} \cite{anderson.freedom} on his homepage was
+one major inspiration that set me on the path of cybersecurity, but which I
+will not elaborate in the document.
+
+Moreover, I unfortunately have lived in a place where
+peoples' digital rights are much more aggressively invaded, particularly in the
+form of systematic, comprehensive, and far-reaching censorship and surveillance
+\cite{internet.coup} \cite[Sect.~5]{chall.censor.circum}.  These threats
+present one of the major real world problems I aim to address by my research in
+security and my main realistic motivation. Through the document, you will see
+my philosophical motivations as well.
 
 \subsection[Secure Systems]{
 Secure Systems: Understanding the mechanisms} 
 \label{sec.secure.systems}
 
-\subsubsection{Low-level system details}
+\subsubsection{Low-level system details} \label{sec.low.level}
 Beside the threat model, when we talk about security, we also implicitly assume
 another model, environment, or host, that encapsulates the problem. For
 instance, in the context of isolation, 
@@ -129,20 +143,20 @@ cybersecurity connects directly with a broad range of other fields, including
 software engineering, systems architecture, networking, and physics.  These
 together contribute to my interest in the low-level details of secure systems.
 
-\subsubsection{A high-level view of the Internet}
+\subsubsection{A high-level view of the Internet} \label{sec.high.level}
 A high-level understanding of how the digital infrastructures work is essential
-to understand what enables these threats. The current networking infrastructure,
-in my opinion, has conflicting properties. On one hand, the fundamental problem
-of the impossibility to link every two computers requires sharing of links, a
-solution that welcomes centralization. On the other hand, the poor scalability
-of simple sharing schemes of a link (usually via a switch) necessitates a
-better scheme to extend a small network globally. To achieve this, the Internet
-relies heavily on delegation and distributed structures, such as topological
-divisions of its address space and delegation of most routing responsibilities
-to each individual networks (e.g.\ ISPs). Its BGP, opearing in between them, is
-mainly concerned exchanging reachability information, whereas its IGPs handle
-routing paths and allow different networks to implement different routing
-policies.
+to understand what enables the threats to digital rights on top of them. The
+current networking infrastructure, in my opinion, has conflicting properties.
+On one hand, the fundamental problem of the impossibility to link every two
+computers requires sharing of links, a solution that welcomes centralization.
+On the other hand, the poor scalability of simple sharing schemes of a link
+(usually via a switch) necessitates a better scheme to extend a small network
+globally. To achieve this, the Internet relies heavily on delegation and
+distributed structures, such as topological divisions of its address space and
+delegation of most routing responsibilities to each individual networks (e.g.\
+ISPs). Its BGP, opearing in between them, is mainly concerned exchanging
+reachability information, whereas its IGPs handle routing paths and allow
+different networks to implement different routing policies.
 
 Therefore, the Internet has become a mixture of centralization and
 decentralization, where each end node is managed by an ISP network, yet no
@@ -186,7 +200,7 @@ consume too much bandwidth, the other side of the story is that ISPs often
 oversubscribe and fraudulently advertise the bandwidth of Internet service they
 provide \cite{isp.oversubscribe.1, isp.oversubscribe.2}. This essentially is a
 probabilistic exploit on its customers --- when almost all of the users happen
-to use the maximal bandwidth the ISP sells to them, cogestion and throttling
+to use the maximal bandwidth the ISP sells to them, congestion and throttling
 occur, and the users, not the ISP, ultimately pay the price --- this is also
 the same kind of injustice imposed by airlines who oversell tickets.
 
@@ -194,7 +208,7 @@ The question of how to build protocols and systems that preserve one's rights
 on top of the Internet that powerful adversaries control, fighting against
 surveillance, censorship, and overall other unfair practices which the
 infrastructures of the current networks happen to enable, is central to my
-interest in secure distributed systems.
+interest in the high-level design of secure distributed systems.
 
 
 \subsection[Data-driven analysis]{
@@ -202,10 +216,11 @@ Data-driven analysis: Lights through artifical clouds}
 Despite my intention to understand systems, many of them are not open for
 analysis, for various reasons. In particular, the aforementioned systems for
 digital surveillance and censorship are not only proprietary but often state
-secrets. On the other hand, similar to side channel attacks, these systems
-inevitably leak information in different ways.
+secrets. However, just as no material can perfectly insulate against heat in
+physics, no system can perfectly isolate information; some of it inevitably
+leaks through side channels (see Section~\ref{sec.low.level}). 
 
-By carefully observing their behavior and probing their responses under
+By carefully observing their behaviors and probing their responses under
 controlled conditions, we can gain insight. Combined with data science
 techniques, these observations reveal hidden structures and enable us to draw
 meaningful conclusions.
@@ -264,8 +279,12 @@ non-interceptible means from transmitting to receiving points}''
 the idea was.
 
 Such ``paradoxical'' ideas of modern cryptography are what attract me most to
-it, because they are the enabler that underlies those systems mentioned in
-section~\ref{sec.secure.systems}: TOR, Bitcoin, OpenVPN, Matrix, etc., and the
+it, because the more paradoxical such an idea is, the greater extent we know
+one can preserve one's rights, even when threatened by extremely powerful
+adversaries\footnote{Albeit unfortunately they all rely on some assumptions,
+particularly that some problems are hard.}.
+Thus, such ideas become the enabler that underlies those systems mentioned in
+section~\ref{sec.high.level}: TOR, Bitcoin, Matrix, etc., and the
 catalyst that leads to the massive adoption of society advancements such as
 e-commerce. Remarkably, in less than 50 years since 1976, we already have a
 number of such discoveries in addition, and here's a list of some of them.
