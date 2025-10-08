@@ -240,6 +240,12 @@ enough to know these works, could know what we are facing everyday better.
 Conversely, I strongly hope to contribute to the free-side of the arms race,
 making the free Internet reachable to everyone.
 
+\subsection[LLMs and security]{LLMs and security: A timely matter}
+The contemporary popularity of LLMs in both the academia and the general public
+is so obvious that I don't need to cite to support it. One particular public
+usage of them is for information retreival, despite the fact that they are
+essentially probalilistic guessing machines. 
+
 \subsection[Cryptography]{Cryptography: A mathematical savior}
 \label{sec.crypto}
 Security is often described as an arms race --- that who controls more
@@ -311,30 +317,46 @@ number of such discoveries in addition, and here's a list of some of them.
 These discoveries have many applications and implications, two of which I pay
 most attention to. One is that they update our understanding of certain
 theoretical lower bounds of how much security one can achieve in the face of
-strong adversaries, no matter the power difference between them. The other is
-how they help minimize the trust required to perform global-level of
-collaboration that involves people from vastly different backgrounds and
-beliefs; such a collaboration that would typically require a strong central
-authority to organize, now only requires the participants to trust a few
-foundamental assumptions of cryptography.
+strong adversaries, no matter the power difference between them (provide the
+adversary is still bounded within feasible computational limits, of course).
+The other is how they help minimize the trust required to perform global-level
+of collaboration that involves people from vastly different backgrounds and
+beliefs; such a collaboration that would typically require a mutually trusted
+central authority to organize, now only requires the participants to trust a
+few foundamental assumptions of cryptography.
 
 Personally, I would go a step further. I believe modern cryptography offers not
-only technical tools, but a possible solution for addressing one of the big
+only technical tools, but a possible mitigation for one of the big
 challenges our democracies face today: fragmentation, polarization, and the
-erosion of shared trust. By design, cryptography redistributes power --- it
-makes mass surveillance prohibitively costly, even for state-level actors, by
-forcing them to target individuals rather than populations. For example,
-suppose breaking one person’s encryption, on average, required a single day of
-dedicated effort (through side-channels, vulnerabilities, or social engineering
-rather than mathematics), that constraint alone would prevent massive
-surveillance, since no adversary has that many days or resources to do this on
-everyone. In this way, encryption does something profound: it automatically and
+erosion of shared trust\footnote{It's only a mitigation because that problem is
+	fundamental. When people lose trust in each other, many will instead turn to
+	support a strong hand, hoping that it can save them
+	\cite{trust.book.fukuyama, how.democracies.die, cultural.backlash}. But a
+strong hand almost always turns into a true tyrant that only benefits a few and
+enslaves the rest. This is something that cryptography alone cannot solve.}. By
+design, cryptography redistributes power --- it makes mass surveillance
+prohibitively costly, even for state-level actors, by forcing them to target
+individuals rather than populations. For example, suppose breaking one person’s
+encryption, on average, required a single day of dedicated effort (through
+side-channels, vulnerabilities, or social engineering rather than mathematics),
+that constraint alone would have the potential to prevent constant massive
+surveillance. A real challenge is the constant discoveries of
+vulnerabilities that affect systems used by a large proportion of people, but
+it does not invalidate the power of cryptography, because massive exploitation
+of a zero-day vulnerability will result in a speedy patch, and this dynamics
+makes the surveillance based on even universal vulnerabilities discrete,
+instead of a continuous event. Indeed, if the governemnts could easily ignore all
+the crypto constructs, then they wouldn't, as mentioned at the start of the
+section, insist on overwriting the laws to legally plant universal backdoors to
+snoop on people.
+
+In this sense, cryptography does something profound: it automatically and
 passively unites individuals, protecting each not by active coordination that
 is increaingly difficult, but by the collective shield of widespread adoption.
 Fortunately, as many modern infrastructures already deploy encryption and other
 crypto schemes by default, this ``passive solidarity'' is not a dream but a
-reachable reality, one that shows how mathematics can serve as a safeguard for
-democracy in an increasingly divided world.
+reachable reality, one that shows how mathematics can serve as a partial
+safeguard for democracy in an increasingly divided world.
 
 To end this section, cryptography not only flows towards my passion for purer
 philosophical understanding, because of its deep connection with theoretical
@@ -462,15 +484,16 @@ corrupt and lead to mistreatment of users, as history has repeatedly shown us.
 By launching the free software movement, Stallman sought to restore power to
 users by securing their essential freedoms \cite[Essay~1]{stallman.essays}. The
 movement has achieved remarkable successes, yet today it still faces serious
-obstacles. An prominent example is the ideology of open source. Often
-associated with Raymond’s The Cathedral and the Bazaar \cite{cathedral.bazaar},
-open source in fact emerged from within the free software community as a
-deviation from its core philosophy. As Stallman emphasizes, ``The term `open
-source' quickly became associated with ideas and arguments based only on
-practical values, such as making or having powerful, reliable software''
-\cite[Essay~14]{stallman.essays}. By shifting focus from freedom to utility,
-open source has obscured the very principles the free software movement was
-founded to protect.
+obstacles. An prominent example is the current situation of open source,
+perhaps surprisingly. Often
+associated with Raymond’s \emph{The Cathedral and the Bazaar}
+\cite{cathedral.bazaar}, open source in fact emerged from within the free
+software community as a deviation from its core philosophy. As Stallman
+emphasizes, ``The term `open source' quickly became associated with ideas and
+arguments based only on practical values, such as making or having powerful,
+reliable software'' \cite[Essay~14]{stallman.essays}. By shifting focus from
+freedom to utility, open source has obscured the very principles the free
+software movement was founded to protect.
 
 There are two significant problems of the current situation of open source. The
 first is about the licenses. Some licenses only open the source code but
@@ -486,18 +509,49 @@ users of proprietary systems. Their situation differs only in that the
 developers of free software may act more ethically and the part of the users
 who do exercise their freedoms can somewhat prevent the developers from going
 rogue. Yet the open source movement's deliberate avoidance of freedom as a
-guiding value undermines awareness of it within the broader community. As
-practical values dominate, free software communities risk being taken over by
-open source members. Even worse are corporate-led open source projects such as
-Microsoft’s VSCode: sustained by contributions from the whole community, but
-mostly directed by company employees whose decisions reflect corporate
-interests \cite{corporate.open.source, fake.open.source}. The result is
-software that strengthens corporate power while exploiting users (e.g.\ VSCode
-has built-in telemetry that is difficult to disable), building on top of
-people's free (in terms of price) contribution. I see this as a profound yet
-subtle undermining of the free software movement, and addressing this challenge
-is essential as computing freedom is increasingly important in achieving a free
-society.
+guiding value undermines awareness of it within the broader community.  As much
+as convenience is important, one should realize that the underlying free
+software principles which encourages modification and sharing are the enabler
+of the Bazaar model. The danger of discarding those principles is that it
+creates an opportunity for corporate corruption and take over, undermining not
+only freedom, but eventually the convenience the users seek at the beginning.
+Today, corporate-led open-source projects, such as Microsoft's VS Code,
+illustrate this dynamic. Although they are sustained by community
+contributions, their governance, licensing, and branding remain firmly under
+corporate control \cite{corporate.open.source, fake.open.source}.  The result
+is software that strengthens corporate power while exploiting users (e.g.\
+VSCode has built-in telemetry that is difficult to disable). They may be
+powerful to use at first, but should there's a conflict with one's interest,
+inconvenience then arises. 
+
+That situation of open source, in my observation, is dangerously similar to the
+rise of authoritarian populism discussed by Norris and Inglehard, who
+understand populism as ``a style of rhetoric reflecting first-order principles
+about who should rule, claiming that legitimate power rests with `the people'
+not the elites. It remains silent about second-order principles, concerning
+what should be done, what policies should be followed, what decisions should be
+made'' \cite[p.~4]{cultural.backlash}. Similarly, I view most popular open
+source projects as reflecting shallow principles of allowing everyone to
+contribute to add more features, but ignoring deeper principles as to what
+direction the software should take, which decisions to make when convenience
+conflicts with freedom, and what are not allowed, even if they add more
+resources to the development of the software. Although a difference is that
+many populists reject the previous ``ruling elites'' whereas many open source
+members may not strongly oppose free software, they all involve people who
+commit to good principles such as democracy and open contribution only in the
+form, but ignoring the ideas and actions behind.  Consequently, just as open
+source projects are corrupted and taken over by corporations, Norris and
+Inglehard observed that such shallow commitment to democracy in turn damages
+democracy itself and welcomes authoritarian \cite{cultural.backlash} --- those
+populist parties that once claimed to be the cure for ``corrupt elites'' and
+``ruinous rule'', actually make decisions that damage the collatoral good more,
+such as Brexit and questionable tarrifs; and some of them became the ``corrupt
+elites'' they swore to fight against once they took power (perhaps they didn't
+mean it anyway and were just opportunistic).
+
+I see this as a profound yet subtle undermining of the free software movement,
+and addressing this challenge is essential as computing freedom is increasingly
+important in achieving a free society.
 
 
 \section[Mathematics]{Mathematics: My purer philosophical pursuits}
