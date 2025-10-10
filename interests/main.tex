@@ -243,12 +243,35 @@ making the free Internet reachable to everyone.
 \subsection[LLMs and security]{LLMs and security: A timely matter}
 The contemporary popularity of LLMs in both the academia and the general public
 is so obvious that I don't need to cite to support it. One particular public
-usage of them is for information retreival, despite the fact that they are
-essentially probalilistic guessing machines. 
+usage of them is for information retreival \cite{info.ret.llms.1,
+info.ret.llms.2}, which has many security
+implications. Among them, my interests are in: 1) how to preserve the privacy
+of all who are involved in the training data. 2) how to circumvent LLM
+censorship. With all these said, LLMs are not of as much theoretical interest
+to me as any of the previous or following subjects; I study this matter mainly
+because of its wide usage and thus its impact.
 
-\emph{Unfinished.}
+Regrettably, I do not have enough knowledge to write meaningful things
+about 1). But I do for 2). At first sight, it would seem to be a tricky
+problem, because even to this day, non-trivial neural networks are still mostly
+blackboxes whose connections we know little about. However, there are actually
+surprisingly many ways to censor such a blackbox, and the current commercial
+models probably combine many of these methods:
+\begin{enumerate}
+\item As a first step, one can simply filter the training data. 
+\item Even though we can't adjust connections in a model as we adjust
+	logic branches in programming currently, we can still fine-tune a model,
+training them to reject undesired topics for censor.  
+\item 
+\end{enumerate}
 
-\subsection[Cryptography]{Cryptography: A mathematical savior}
+\emph{Unfinished}.
+
+\subsection[Cryptography]{Cryptography: A mathematical
+savior\protect\footnotemark}
+\footnotetext{I made this title dramatic, but cryptography cannot be, at least
+	not a savior alone, if other problems are not solved. See the discussion at
+the end of this subsection.}
 \label{sec.crypto}
 Security is often described as an arms race --- that who controls more
 resources tends to discover more vulnerabilities, devise more attacks, and
@@ -257,20 +280,20 @@ up fighting the regime \cite{self.censor.1, self.censor.2, self.censor.3}  and
 even fewer of the fighters have sufficient skills to join in the security war
 \cite{defenders.lack.skills.1, defenders.lack.skills.2}?
 
-I believe one solution to what might sound like a power struggle lies within
-(modern) cryptography. For thousands of years since the use of the earliest
-symmetric encryption methods like the Ceasar cipher, the ability to securely
-communicate through an insecure channel had still been mostly limited to the
-privileged who could afford persistent access to physical secure channels to
-exchange the keys and reliable safeguarding of the keys.  A stunning turning
-point was found in what was widely regarded as the beginning of modern
-cryptography, Deffie and Hellman's \emph{New Directions in Cryptography}
-\cite{new.directions.crypto}, where they gave a practical mathematical
-procedure to Merkle's original idea for establishing a key known only to both
-parties over an insecure channel.
+I believe one partial solution to what might sound like a power struggle lies
+within (modern) cryptography. For thousands of years since the use of the
+earliest symmetric encryption methods like the Ceasar cipher, the ability to
+securely communicate through an insecure channel had still been mostly limited
+to the privileged who could afford persistent access to physical secure
+channels to exchange the keys and reliable safeguarding of the keys.  A
+stunning turning point was found in what was widely regarded as the beginning
+of modern cryptography, Deffie and Hellman's \emph{New Directions in
+Cryptography} \cite{new.directions.crypto}, where they gave a practical
+mathematical procedure to Merkle's original idea for establishing a key known
+only to both parties over an insecure channel.
 
-At first glance, the idea sounded so impossible that Merkel himself faced 
-rejections when presenting the idea to his then professor Hoffman and to the
+At the time, the idea seemed so paradoxical that Merkel himself faced 
+rejections by his then professor Hoffman and the
 CACM \cite{merkle.rejection}:
 \begin{quotation}
 	``I am sorry to have to inform you that the paper is not in the main stream
@@ -280,22 +303,20 @@ CACM \cite{merkle.rejection}:
 	``Experience shows that it is extremely dangerous to transmit key
 	information in the clear.''\cite{merkle.rejection}
 \end{quotation}
-The rejections represented a concensus of the old cryptography community that
-even Shannon concurred with: ``\emph{The key must be transmitted by
+Even Shannon shared that assumption: ``\emph{The key must be transmitted by
 non-interceptible means from transmitting to receiving points}''
-\cite[p.~670]{shannon.theory.secrecy}, which demonstrates how ``paradoxical''
-the idea was.
+\cite[p.~670]{shannon.theory.secrecy}.
 
 Such ``paradoxical'' ideas of modern cryptography are what attract me most to
-it, because the more paradoxical such an idea is, the greater extent we know
-one can preserve one's rights, even when threatened by extremely powerful
+it, because the more paradoxical such an idea is, the more power it returns
+individuals to preserve their rights against overwhelmingly strong
 adversaries\footnote{Albeit unfortunately they all rely on some assumptions,
-particularly that some problems are hard.}.
-Thus, such ideas become the enabler that underlies those systems mentioned in
-section~\ref{sec.high.level}: TOR, Bitcoin, Matrix, etc., and the
-catalyst that leads to the massive adoption of society advancements such as
-e-commerce. Remarkably, in less than 50 years since 1976, we already have a
-number of such discoveries in addition, and here's a list of some of them.
+particularly that some problems are hard.}.  Thus, such ideas become the
+enabler that underlies those systems mentioned in section~\ref{sec.high.level}:
+TOR, Bitcoin, Matrix, etc., and the catalyst that leads to the massive adoption
+of society advancements such as e-commerce. Remarkably, in less than 50 years
+since 1976, we already have a number of such discoveries in addition, and
+here's a list of some of them.
 \begin{description}
 \item[Pseudorandom functions] The kind of deterministic algorithms
 	whose outputs look like that of a random oracle, by block ciphers like
@@ -317,11 +338,11 @@ number of such discoveries in addition, and here's a list of some of them.
 \end{description}
 
 These discoveries have many applications and implications, two of which I pay
-most attention to. One is that they update our understanding of certain
+most attention to. Theoretically, they update our understanding of certain
 theoretical lower bounds of how much security one can achieve in the face of
 strong adversaries, no matter the power difference between them (provide the
 adversary is still bounded within feasible computational limits, of course).
-The other is how they help minimize the trust required to perform global-level
+Socially, they help minimize the trust required to perform global-level
 of collaboration that involves people from vastly different backgrounds and
 beliefs; such a collaboration that would typically require a mutually trusted
 central authority to organize, now only requires the participants to trust a
@@ -330,43 +351,95 @@ few foundamental assumptions of cryptography.
 Personally, I would go a step further. I believe modern cryptography offers not
 only technical tools, but a possible mitigation for one of the big
 challenges our democracies face today: fragmentation, polarization, and the
-erosion of shared trust\footnote{It's only a mitigation because that problem is
-	fundamental. When people lose trust in each other, many will instead turn to
-	support a strong hand, hoping that it can save them
-	\cite{trust.book.fukuyama, how.democracies.die, cultural.backlash}. But a
-strong hand almost always turns into a true tyrant that only benefits a few and
-enslaves the rest. This is something that cryptography alone cannot solve.}. By
-design, cryptography redistributes power --- it makes mass surveillance
-prohibitively costly, even for state-level actors, by forcing them to target
-individuals rather than populations. For example, suppose breaking one person’s
-encryption, on average, required a single day of dedicated effort (through
-side-channels, vulnerabilities, or social engineering rather than mathematics),
-that constraint alone would have the potential to prevent constant massive
-surveillance. A real challenge is the constant discoveries of
-vulnerabilities that affect systems used by a large proportion of people, but
-it does not invalidate the power of cryptography, because massive exploitation
-of a zero-day vulnerability will result in a speedy patch, and this dynamics
-makes the surveillance based on even universal vulnerabilities discrete,
-instead of a continuous event. Indeed, if the governemnts could easily ignore all
-the crypto constructs, then they wouldn't, as mentioned at the start of the
-section, insist on overwriting the laws to legally plant universal backdoors to
-snoop on people.
+erosion of shared trust \cite{trust.book.fukuyama, how.democracies.die,
+cultural.backlash}. By
+design, cryptography redistributes power to a certain degree --- governments
+need resources to crack one's system, be it burning a vulnerability, social
+engineering, or coercing, when they can't simply overcome the crypto barrier
+that unites people's power together, in the sense that massive
+invasion of digital rights requires the governments to multiply the efforts
+requires on a single person by the number of those who are protected by crypto
+constructs\footnote{This simplifies the issue by ignoring vulnerabilities,
+phishing techniques, etc., that can target many at once, but these are usually
+dealt with quickly once burned.}. In this way, cryptography does something more
+profound, uniting people's power passively, when prospects of active
+collaboration are damaged by trust issues.  Fortunately, as many modern
+infrastructures already deploy encryption and other crypto schemes by default,
+this ``passive solidarity'' is not a dream but a reachable reality, one that
+shows how mathematics can serve as a partial safeguard for democracy in an
+increasingly divided world.
 
-In this sense, cryptography does something profound: it automatically and
-passively unites individuals, protecting each not by active coordination that
-is increaingly difficult, but by the collective shield of widespread adoption.
-Fortunately, as many modern infrastructures already deploy encryption and other
-crypto schemes by default, this ``passive solidarity'' is not a dream but a
-reachable reality, one that shows how mathematics can serve as a partial
-safeguard for democracy in an increasingly divided world.
+I need to clarify my threat model here and emphasize that cryptography alone
+cannot be the sole savior of people that frees them automatically; it has
+limitations. This adjective, ``passive'', in the previous paragraph only
+describes that people do not need to actively unite.  However, each person
+needs to actively take an interest in her own security, even if otherwise she
+does not agree with others and cannot unite with them. Essentially, this is
+because that cryptographic protection gives the taken power back to users, and
+with this power over their life, there come their responsibilities.
+
+The most direct limitations of crypto constructs are their theoretical assumptions.
+Although P vs.\ NP seems rather remote to one's normal life,  more
+serious limitations emerge when applying cryptography: that is when a
+theoretical model fails to capture all the danger and risks that are present in
+the real world. As a very practical example, I have been devoted
+to using OpenPGP since I know it. Setting aside all the theoretical
+assumptions of the crypto algorithms it uses, one real-world assumption is that
+one's private key is never compromised. This rather simple assumption on paper
+brings a lot more serious problems when actually in use.
+\begin{enumerate}
+\item A OpenPGP secret is usually used for at least a few years. Although the
+	risk of a system compromise at one time is low, it accumulates as time
+	passes.  Even as someone aware of security issues and practices, I have no
+	confidence in that there will be no breach (more strictly speaking,
+	opportunities of breaches) to my system once a few years. 
+\item As such, people have used many pratices to safeguard the secret, such as
+	writing it down physically and storing it in a vault, or use a more
+	convenient media such as a hardware key. But if we want a key to be useful
+	at all, we need to use it often, and each use increases the risk of
+	compromise (even if a hardware key prevents the secret from being
+	extracted, a compromised system can still trick the key into performing
+	operations, combined with some authentication breach.) 
+\item An arguably safer way that reduces interaction with the secret is to have
+	a master secret stored physically such as on a hardware key, and then create
+	subkeys that are signed by the master secret and used daily. The master
+	secret is only used to manage subkeys and are dormant otherwise.
+\item I personally use the above scheme, but a subkey's compromise can still be
+	fatal in many cases. One specific problem is the lack of forward secrecy in
+	OpenPGP encrypted communication schemes. What's worse, she who only wants
+	to snoop on my communication can stay low-profile, and I may never get to
+	know a subkey is compromised before its expiration date.
+\end{enumerate}
+Thus, although those ``paradoxical'' properties of crypto constructs are
+strong and many remain sound for many years, real world details really affect,
+and in many cases, decide how secure one's systems are in daily usage. 
+
+One direction to address this problem is to develop more easy to use, or in
+another phrase, more fool-proof systems \cite{secure.systems.people.can.use},
+often by combining crypto constructs in more complicated ways to patch known
+big issues. For instance, the forward secrecy problem is patched by most
+instant-messaging systems with real-time session key (ephemeral key)
+establishments . But I have frequently wondered if making secure systems more
+fool-proof is the right direction to go.  The use of ephemeral keys decouples
+encryption and decryption from the master secret, thereby protecting it from
+exposure through routine operations; but what stops a careless user from
+handing out freely what we try so hard to protect? And doesn't building more
+fool-proof systems risk spoiling users and decreasing the overall awareness of
+the responsibility that comes naturally when rights-preserving systems return
+power to users \cite{usable.security.contradiction,
+rid.of.usability.sec.tradeoff}?  Thus, I boldly argue that we should instead
+build systems that encourages and directs users to actively engage with their
+own security.  Finally, I find the underlying reasoning very similar to that of
+why freedom is not free, to which I return in Section~\ref{sec.free.software}.
 
 To end this section, cryptography not only flows towards my passion for purer
 philosophical understanding, because of its deep connection with theoretical
 computer science and mathematics, to which I turn in Section~\ref{sec.math},
-but also carries my hope to break free from the strong grasp of the tyrannies
-today, one that represents my free will which refuses to lose my agency and
-independence, in a world that too often seeks to reduce us into interchangable
-screws for the system.  
+but also carries my hope (through careful uses of its ``paradoxical''
+constructs) to break free from the strong grasp of the tyrannies today, one
+that represents my free will which refuses to lose my agency and independence,
+in a world that too often seeks to reduce us into interchangable screws for the
+system.  
 
 \section[Software engineering]{
 Software engineering: My earliest and continuing passion}
@@ -464,6 +537,7 @@ future research.
 Free software, free society\protect\footnotemark}
 \footnotetext{The title here is the book title of the essays collection of
 Dr.~Richard Stallman \cite{stallman.essays}.}
+\label{sec.free.software}
 
 As our lives are more digitalized, digital computers are playing an
 increasingly important role in them. Consequently, she who controls the
@@ -641,17 +715,17 @@ propositions \cite{companion.to.russell.tt}.
 
 Perhaps one reason why the paradoxes were so difficult to fix was that Cantor's
 diagonal method had revealed something deeply wrong about the previous
-mathematical reasoning. To avoid the paradoxes, one prominent work was
-Zermelo's axiomatic set theory (later refined by others) which restricted what
-sets can be. But there are still solved problems. Previously, mathematicians
-thought that they were working with real and complete math objects such as sets
-and numbers and that they were speaking truths of them as theorems. Since that
-had lead to contradictions, there must have been something wrong in the
-foundation of what we believed these objects to be or our logic. Even if we
-discard the previous foundation entirely and adopt the axiomatic theory as the
-new foundation, there must still be the matter of truth and meaning --- we
-cannot adopt the axiomatic set theory entirely formally as the new foundation,
-without a meaning about what we think is true or not \cite[Ch.~12]{kleeneitmm}.
+mathematical reasoning, one which goes deeper than even the prominent work of
+axiomatic set theory which tried to eliminate these paradoxes. Previously,
+mathematicians thought that they were working with real and complete math
+objects such as sets and numbers and that they were speaking truths of them as
+theorems. Since that had lead to contradictions, there must have been something
+wrong in the foundation of what we believed these objects to be or our logic.
+Even if we discard the previous foundation entirely and adopt the axiomatic
+theory as the new foundation, there must still be the matter of truth and
+meaning --- we cannot adopt the axiomatic set theory entirely formally as the
+new foundation, without a meaning about what we think is true or not
+\cite[Ch.~12]{kleeneitmm}.
 
 \emph{Unfinished.}
 
