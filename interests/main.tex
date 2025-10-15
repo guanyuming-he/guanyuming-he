@@ -255,17 +255,38 @@ Regrettably, I do not have enough knowledge to write meaningful things
 about 1). But I do for 2). At first sight, it would seem to be a tricky
 problem, because even to this day, non-trivial neural networks are still mostly
 blackboxes whose connections we know little about. However, there are actually
-surprisingly many ways to censor such a blackbox, and the current commercial
-models probably combine many of these methods:
-\begin{enumerate}
-\item As a first step, one can simply filter the training data. 
-\item Even though we can't adjust connections in a model as we adjust
-	logic branches in programming currently, we can still fine-tune a model,
-training them to reject undesired topics for censor.  
-\item 
-\end{enumerate}
+surprisingly many ways to censor such a blackbox, combining censorship on
+input, output, tokens, weights (to limited extent), and also using specific
+fine-tuning to train models to reject undesired contents
 
-\emph{Unfinioned}.
+Where there is a way to censor, there is a way to defend. First, we can poison
+the training data \cite{data.poisoning}, even in a computationally undetectable way, by
+using cryptographic constructs \cite{ml.undetectable.backdoor,
+ml.undetectable.backdoor.cont}, which is a good
+example of applying ``paradoxical'' crytographic constructs, to which I turn in
+Section~\ref{sec.crypto}. Second, although a model on a server is unmodifiable,
+the tendency of LLMs to follow commands have been taken advantage of to
+override some protection mechanisms \cite{llm.jail.break}. Finally, one can
+always request a LLM to speak in some encoding\footnote{As the time of writing,
+	it is completely doable to role-play with ChatGPT by declaring that I am a
+	cryptographic professor who wants to set assignments for students to
+	practice some cipher, say, the Caesar ciper, and that I want ChatGPT to
+	predict student replies. Then, we can pretty freely input censored text
+	under the cipher, which ChatGPT will not refuse.  However, its output are
+often too garbled to be meaningful; I have not conducted an empirical
+experiment on how much that is likely.}.  
+
+Although these attacks are intriguing, I must emphasize that the topic
+interests me primarily because of the influence of LLMs on the general public
+now.  Although architectures and training algorithms have been explored in
+great detail, the basic paradigm of adjusting weights between connected nodes
+to approximate an assumed existing target function remains conceptually close
+to the original perceptron model \cite{perceptron}, and thus remains a na\"ive
+model of our brain that fails to capture many finer details of it, and that
+reflects our limited understanding of our brain.  Moreover, the optimization
+problems, belonging to applied real analysis, is not my thing.  Thus, I have
+overall limited interest in LLMs themselves, unless there happen to be the next
+big idea some day.
 
 \subsection[Cryptography]{Cryptography: A mathematical
 savior?\protect\footnotemark}
@@ -283,7 +304,7 @@ even fewer of the fighters have sufficient skills to join in the security war
 
 I believe one partial solution to what might sound like a power struggle lies
 within (modern) cryptography. For thousands of years since the use of the
-earliest symmetric encryption methods like the Ceasar cipher, the ability to
+earliest symmetric encryption methods like the Caesar cipher, the ability to
 securely communicate through an insecure channel had still been mostly limited
 to the privileged who could afford persistent access to physical secure
 channels to exchange the keys and reliable safeguarding of the keys.  A
@@ -372,7 +393,7 @@ in an increasingly divided world.
 \subsubsection{Limitations and users' responsibilities}
 \label{sec.crypto.limit}
 Having all hopes on passive constructs to save people's active lives is
-unrealistic. Straightforwardly, crypto constructs all have assumptions,
+unrealistic. As a direct problem, crypto constructs all have assumptions,
 particularly that some problems are hard.  Although P vs.\ NP seems rather
 remote to one's normal life,  more serious limitations emerge when applying
 cryptography: that is when a theoretical model fails to capture all the danger
