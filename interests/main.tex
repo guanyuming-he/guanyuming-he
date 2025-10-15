@@ -97,7 +97,7 @@ These hosts form a hierarchy. For instance, processes inside an OS may run
 inside a virtual machine, on hardware, within the physical world.
 
 As a result, a security researcher has to understand these hosts, each to a
-different degree, depending on how secure she wants her systems to be. Even if
+different degree, depending on how secure one wants one's systems to be. Even if
 a system is formally verified to be secure within a host, it can still be
 attacked from interactions with an outer host. That is well examplified by
 the Meltdown attack, which breaks both kernel and hypervisor's isolation of
@@ -265,14 +265,15 @@ training them to reject undesired topics for censor.
 \item 
 \end{enumerate}
 
-\emph{Unfinished}.
+\emph{Unfinioned}.
 
 \subsection[Cryptography]{Cryptography: A mathematical
-savior\protect\footnotemark}
-\footnotetext{I made this title dramatic, but cryptography cannot be, at least
-	not a savior alone, if other problems are not solved. See the discussion at
-the end of this subsection.}
-\label{sec.crypto}
+savior?\protect\footnotemark}
+\footnotetext{I use the question mark, because cryptography cannot be, at least
+not a savior alone, if other problems are not solved. See the discussion at the
+end of this subsection.} \label{sec.crypto}
+
+\subsubsection{The potential of ``paradoxical'' modern crypto constructs}
 Security is often described as an arms race --- that who controls more
 resources tends to discover more vulnerabilities, devise more attacks, and
 harden their systems more. Where is hope, then, when most self-censor and give
@@ -287,7 +288,7 @@ securely communicate through an insecure channel had still been mostly limited
 to the privileged who could afford persistent access to physical secure
 channels to exchange the keys and reliable safeguarding of the keys.  A
 stunning turning point was found in what was widely regarded as the beginning
-of modern cryptography, Deffie and Hellman's \emph{New Directions in
+of modern cryptography, Diffie and Hellman's \emph{New Directions in
 Cryptography} \cite{new.directions.crypto}, where they gave a practical
 mathematical procedure to Merkle's original idea for establishing a key known
 only to both parties over an insecure channel.
@@ -298,7 +299,7 @@ CACM \cite{merkle.rejection}:
 \begin{quotation}
 	``I am sorry to have to inform you that the paper is not in the main stream
 	of present cryptography thinking and I would not recommend that it be
-	published in the Communications of the ACM.''
+	publioned in the Communications of the ACM.''
 
 	``Experience shows that it is extremely dangerous to transmit key
 	information in the clear.''\cite{merkle.rejection}
@@ -311,7 +312,7 @@ Such ``paradoxical'' ideas of modern cryptography are what attract me most to
 it, because the more paradoxical such an idea is, the more power it returns
 individuals to preserve their rights against overwhelmingly strong
 adversaries\footnote{Albeit unfortunately they all rely on some assumptions,
-particularly that some problems are hard.}.  Thus, such ideas become the
+to which I return in Section~\ref{sec.crypto.limit}.}.  Thus, such ideas become the
 enabler that underlies those systems mentioned in section~\ref{sec.high.level}:
 TOR, Bitcoin, Matrix, etc., and the catalyst that leads to the massive adoption
 of society advancements such as e-commerce. Remarkably, in less than 50 years
@@ -358,33 +359,25 @@ need resources to crack one's system, be it burning a vulnerability, social
 engineering, or coercing, when they can't simply overcome the crypto barrier
 that unites people's power together, in the sense that massive
 invasion of digital rights requires the governments to multiply the efforts
-requires on a single person by the number of those who are protected by crypto
-constructs\footnote{This simplifies the issue by ignoring vulnerabilities,
-phishing techniques, etc., that can target many at once, but these are usually
-dealt with quickly once burned.}. In this way, cryptography does something more
-profound, uniting people's power passively, when prospects of active
-collaboration are damaged by trust issues.  Fortunately, as many modern
-infrastructures already deploy encryption and other crypto schemes by default,
-this ``passive solidarity'' is not a dream but a reachable reality, one that
-shows how mathematics can serve as a partial safeguard for democracy in an
-increasingly divided world.
+requires on a single person\footnote{This simplifies the issue by ignoring
+vulnerabilities, phishing techniques, etc., that can target many at once, but
+these are usually dealt with quickly once burned.}. In this way, cryptography
+does something more profound, uniting people's power passively, when prospects
+of active collaboration are damaged by trust issues.  Fortunately, as many
+modern infrastructures already deploy encryption and other crypto schemes by
+default, this ``passive solidarity'' is not a dream but a reachable reality,
+one that shows how mathematics can serve as a partial safeguard for democracy
+in an increasingly divided world.
 
-I need to clarify my threat model here and emphasize that cryptography alone
-cannot be the sole savior of people that frees them automatically; it has
-limitations. This adjective, ``passive'', in the previous paragraph only
-describes that people do not need to actively unite.  However, each person
-needs to actively take an interest in her own security, even if otherwise she
-does not agree with others and cannot unite with them. Essentially, this is
-because that cryptographic protection gives the taken power back to users, and
-with this power over their life, there come their responsibilities.
-
-The most direct limitations of crypto constructs are their theoretical assumptions.
-Although P vs.\ NP seems rather remote to one's normal life,  more
-serious limitations emerge when applying cryptography: that is when a
-theoretical model fails to capture all the danger and risks that are present in
-the real world. As a very practical example, I have been devoted
-to using OpenPGP since I know it. Setting aside all the theoretical
-assumptions of the crypto algorithms it uses, one real-world assumption is that
+\subsubsection{Limitations and users' responsibilities}
+\label{sec.crypto.limit}
+Having all hopes on passive constructs to save people's active lives is
+unrealistic. Straightforwardly, crypto constructs all have assumptions,
+particularly that some problems are hard.  Although P vs.\ NP seems rather
+remote to one's normal life,  more serious limitations emerge when applying
+cryptography: that is when a theoretical model fails to capture all the danger
+that can break the assumptions. As a very practical example, I have been
+devoted to using OpenPGP since I know it. One central assumption of it is that
 one's private key is never compromised. This rather simple assumption on paper
 brings a lot more serious problems when actually in use.
 \begin{enumerate}
@@ -393,20 +386,20 @@ brings a lot more serious problems when actually in use.
 	passes.  Even as someone aware of security issues and practices, I have no
 	confidence in that there will be no breach (more strictly speaking,
 	opportunities of breaches) to my system once a few years. 
-\item As such, people have used many pratices to safeguard the secret, such as
+\item As such, people have used many practices to safeguard the secret, such as
 	writing it down physically and storing it in a vault, or use a more
 	convenient media such as a hardware key. But if we want a key to be useful
-	at all, we need to use it often, and each use increases the risk of
-	compromise (even if a hardware key prevents the secret from being
-	extracted, a compromised system can still trick the key into performing
-	operations, combined with some authentication breach.) 
+	at all, we need to use it, and each use increases the risk of compromise;
+	even if a hardware key prevents the secret from being extracted, a
+	compromised system can still trick the key into performing operations,
+	combined with some authentication breach. 
 \item An arguably safer way that reduces interaction with the secret is to have
-	a master secret stored physically such as on a hardware key, and then create
-	subkeys that are signed by the master secret and used daily. The master
-	secret is only used to manage subkeys and are dormant otherwise.
+	a master secret stored in isolation such as on a hardware key, and then
+	create subkeys that are signed by the master secret and used daily. The
+	master secret is only used to manage subkeys.
 \item I personally use the above scheme, but a subkey's compromise can still be
-	fatal in many cases. One specific problem is the lack of forward secrecy in
-	OpenPGP encrypted communication schemes. What's worse, she who only wants
+	fatal in many cases. One specific problem is the lack of forward secrecy
+	when a subkey is used for encryption. What's worse, one who only wants
 	to snoop on my communication can stay low-profile, and I may never get to
 	know a subkey is compromised before its expiration date.
 \end{enumerate}
@@ -414,32 +407,55 @@ Thus, although those ``paradoxical'' properties of crypto constructs are
 strong and many remain sound for many years, real world details really affect,
 and in many cases, decide how secure one's systems are in daily usage. 
 
-One direction to address this problem is to develop more easy to use, or in
-another phrase, more fool-proof systems \cite{secure.systems.people.can.use},
-often by combining crypto constructs in more complicated ways to patch known
-big issues. For instance, the forward secrecy problem is patched by most
-instant-messaging systems with real-time session key (ephemeral key)
-establishments . But I have frequently wondered if making secure systems more
-fool-proof is the right direction to go.  The use of ephemeral keys decouples
-encryption and decryption from the master secret, thereby protecting it from
-exposure through routine operations; but what stops a careless user from
-handing out freely what we try so hard to protect? And doesn't building more
-fool-proof systems risk spoiling users and decreasing the overall awareness of
-the responsibility that comes naturally when rights-preserving systems return
-power to users \cite{usable.security.contradiction,
-rid.of.usability.sec.tradeoff}?  Thus, I boldly argue that we should instead
-build systems that encourages and directs users to actively engage with their
-own security.  Finally, I find the underlying reasoning very similar to that of
-why freedom is not free, to which I return in Section~\ref{sec.free.software}.
+Since such issues are faced even by security researchers everyday, the general
+public clearly will suffer more from them. Anderson reported that cryptosystems
+in retail banking failed mostly because of ``implementation errors and
+management failures,'' instead of cryptoanalysis problems, in 1993
+\cite{anderson.why.cryptosys.fail}; and that observation remained mostly the
+same, 25 years later \cite{why.cryptosys.fail.revisit}. From another domain,
+Adams and Sasse surveyed users of password systems and argued that the
+then such systems lacked a user-centric design, also identifying a ``vicious
+circle'' where security policy makers and users lack a mutual understanding
+\cite{users.are.not.the.enemy}. 
 
-To end this section, cryptography not only flows towards my passion for purer
-philosophical understanding, because of its deep connection with theoretical
-computer science and mathematics, to which I turn in Section~\ref{sec.math},
-but also carries my hope (through careful uses of its ``paradoxical''
-constructs) to break free from the strong grasp of the tyrannies today, one
-that represents my free will which refuses to lose my agency and independence,
-in a world that too often seeks to reduce us into interchangable screws for the
-system.  
+One direction to address this problem is to develop more easy-to-use, or in
+another phrase, more fool-proof systems that hide complexity from users
+\cite{secure.systems.people.can.use}. often by combining crypto constructs in
+more complicated ways to patch known big issues.  For instance, the forward
+secrecy problem is patched by most instant-messaging systems with real-time
+session key (ephemeral key) establishments.  In particular, there is a recent
+trend to make systems ``secure by default'' \cite{secure.by.default}. That
+raises the important question: can security can really be achieved
+automatically and passively by default?
+
+I argue that it cannot --- there are essential complexities of security that
+should not be hidden. The use of ephemeral keys decouples encryption and
+decryption from the master secret, thereby protecting it from exposure through
+routine operations; but what stops a careless user from handing out freely what
+we try so hard to protect? And doesn't building more fool-proof systems risk
+spoiling users and decreasing the overall awareness of the responsibility that
+comes naturally when rights-preserving systems return power to users
+\cite{usable.security.contradiction, rid.of.usability.sec.tradeoff}?  Thus, I
+contend that we should instead build systems that encourages and directs
+users to actively engage with their own security. Consistent with my view,
+in the afore-cited work of Adams and Sasse, they did not advocate for providing
+for the users at all cost; instead, they suggested that many users are aware of
+security but need to be informed of the circumstances and be trained.
+Similarly, both Anderson and K\o ien, separated by 25 years, arrived at the
+same conclusion that there is a deficiency in security competence and it is
+imperative to educate and spread awareness more about security
+\cite{anderson.why.cryptosys.fail, users.are.not.the.enemy}. Finally, I find
+the underlying reasoning very similar to that of why freedom is not free, to
+which I return in Section~\ref{sec.free.software}.
+
+To end this section, cryptography is the enabler of and essential for the hope
+of the digitally abused to break free from the powerful adversaries, but on the
+other hand, it is not a savior for those who lack basic understanding of
+security. To apply cryptography in an engaging way that automatically incites
+users to learn more about security, is a central research direction I want to
+explore. Besides, because of its deep connection with complexity theory, number
+theory, and other theoretical fields, it also serves as a good preparation
+before entering these realms in the later stages of my academic career.
 
 \section[Software engineering]{
 Software engineering: My earliest and continuing passion}
@@ -466,7 +482,7 @@ a big challenge, particularly in interface design, separation of components,
 and all that we still have no fixed rules to follow. In other words, large
 systems engineering largely remains an art instead of a science
 \cite{no.silver.bullet, prospect.eng.discipline.software}. Could it become a
-science one day, governed by well-established rules that guide us toward
+science one day, governed by well-establioned rules that guide us toward
 optimal software systems in all or at least most situations? That is an
 intriguing question I aspire to explore while continuing to construct software
 in the following years.
@@ -540,7 +556,7 @@ Dr.~Richard Stallman \cite{stallman.essays}.}
 \label{sec.free.software}
 
 As our lives are more digitalized, digital computers are playing an
-increasingly important role in them. Consequently, she who controls the
+increasingly important role in them. Consequently, one who controls the
 computers will have great power over our lives. But do we control the computers
 (in the general sense, including mobile phones, smart devices, etc.) that we
 purchased and own? By the very definition, software controls our computers.
@@ -757,7 +773,7 @@ meaning --- we cannot adopt the axiomatic set theory entirely formally as the
 new foundation, without a meaning about what we think is true or not
 \cite[Ch.~12]{kleeneitmm}.
 
-\emph{Unfinished.}
+\emph{Unfinioned.}
 
 \include{additional}
 
