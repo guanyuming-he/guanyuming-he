@@ -260,21 +260,21 @@ input, output, tokens, weights (to limited extent), and also using specific
 fine-tuning to train models to reject undesired contents
 
 Where there is a way to censor, there is a way to defend. First, we can poison
-the training data \cite{data.poisoning}, even in a computationally undetectable way, by
-using cryptographic constructs \cite{ml.undetectable.backdoor,
-ml.undetectable.backdoor.cont}, which is a good
-example of applying ``paradoxical'' crytographic constructs, to which I turn in
+the training data \cite{data.poisoning}, even in a computationally undetectable
+way, by using cryptographic constructs \cite{ml.undetectable.backdoor,
+ml.undetectable.backdoor.cont}, which is a good example of applying
+``paradoxical'' crytographic constructs, to which I turn in
 Section~\ref{sec.crypto}. Second, although a model on a server is unmodifiable,
 the tendency of LLMs to follow commands have been taken advantage of to
 override some protection mechanisms \cite{llm.jail.break}. Finally, one can
 always request a LLM to speak in some encoding\footnote{As the time of writing,
-	it is completely doable to role-play with ChatGPT by declaring that I am a
-	cryptographic professor who wants to set assignments for students to
-	practice some cipher, say, the Caesar ciper, and that I want ChatGPT to
-	predict student replies. Then, we can pretty freely input censored text
-	under the cipher, which ChatGPT will not refuse.  However, its output are
-often too garbled to be meaningful; I have not conducted an empirical
-experiment on how much that is likely.}.  
+it is completely doable to role-play with ChatGPT by declaring that I am a
+cryptographic professor who wants to set assignments for students to
+practice some cipher, say, the Caesar ciper, and that I want ChatGPT to
+predict student replies. Then, we can pretty freely input censored text
+under the cipher, which ChatGPT will not refuse.  However, its output are often
+too garbled to be meaningful; I have not conducted an empirical experiment on
+how much that is likely.}.  
 
 Although these attacks are intriguing, I must emphasize that the topic
 interests me primarily because of the influence of LLMs on the general public
@@ -285,8 +285,19 @@ to the original perceptron model \cite{perceptron}, and thus remains a na\"ive
 model of our brain that fails to capture many finer details of it, and that
 reflects our limited understanding of our brain.  Moreover, the optimization
 problems, belonging to applied real analysis, is not my thing.  Thus, I have
-overall limited interest in LLMs themselves, unless there happen to be the next
-big idea some day.
+overall limited interest in the theories of LLMs, unless there emerges the next
+big idea in neural network based machine learning.
+
+On the other hand, I do have interests in the application of LLMs. I generally
+agree with LeCun, Bengio, and Hinton in that the current success of deep neural
+networks is largely due to their ability to absorb a massive amount of data
+(especially raw data) with little engineering \cite{2015.deep.learning}.  As
+such, even with their logical inaccuracy and other problems, they still have
+great potential to speed up our works. Consider a massive pump of water that
+contains some waste (c.f.\ hallucination); so long as we could correctly filter
+the waste out, we can still get uncontaminated water at a high rate. As an
+interesting example, in Section~\ref{sec.speed.formal} I noted how LLMs can
+potentially speed up formalization, with proof assistants as the filters. 
 
 \subsection[Cryptography]{Cryptography: A mathematical
 savior?\protect\footnotemark}
@@ -332,13 +343,15 @@ non-interceptible means from transmitting to receiving points}''
 Such ``paradoxical'' ideas of modern cryptography are what attract me most to
 it, because the more paradoxical such an idea is, the more power it returns
 individuals to preserve their rights against overwhelmingly strong
-adversaries\footnote{Albeit unfortunately they all rely on some assumptions,
-to which I return in Section~\ref{sec.crypto.limit}.}.  Thus, such ideas become the
-enabler that underlies those systems mentioned in section~\ref{sec.high.level}:
-TOR, Bitcoin, Matrix, etc., and the catalyst that leads to the massive adoption
-of society advancements such as e-commerce. Remarkably, in less than 50 years
-since 1976, we already have a number of such discoveries in addition, and
-here's a list of some of them.
+adversaries\footnote{Albeit unfortunately they all rely on some assumptions, to
+which I return in Section~\ref{sec.crypto.limit}.}.  Thus, such ideas become
+the enabler that underlies those systems mentioned in
+section~\ref{sec.high.level}: TOR, Bitcoin, Matrix, etc.\footnote{Yes, the
+powerful adversaries can of course use them; but the main point is cryptography
+enables what was not possible for the weak before.}, and the catalyst that
+leads to the massive adoption of society advancements such as e-commerce.
+Remarkably, in less than 50 years since 1976, we already have a number of such
+discoveries in addition, and here's a list of some of them.
 \begin{description}
 \item[Pseudorandom functions] The kind of deterministic algorithms
 	whose outputs look like that of a random oracle, by block ciphers like
@@ -517,7 +530,7 @@ formalizing the specification and verifying that the software built indeed
 satisfies it could be seen as an ultimate way to eliminate bugs
 \cite{hoare.axiomatic.prog}. 
 
-\subsubsection{The speed problem of formalization}
+\subsubsection{The speed problem of formalization} \label{sec.speed.formal}
 Perhaps unsurprisingly, the industry has a low usage of fully verified software
 \cite{formal.methods.underuse}, since the business dynamics changes rapidly,
 and approaches that allow quick iteration of software, such as agile

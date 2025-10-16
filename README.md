@@ -96,7 +96,7 @@ detail in security).
 ## Instant messaging
 One significant weakness of using OpenPGP keys to encrypt emails is the lack of
 forward secrecy. It is technically possible for two parties to perform a 
-Deffie-Hellman-like protocol via email to establish session keys, but that would
+Diffie-Hellman-like protocol via email to establish session keys, but that would
 be extremely cumbersome, compared with automatic processes employed by instant
 messaging programs.
 
