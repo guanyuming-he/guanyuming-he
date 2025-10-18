@@ -66,8 +66,7 @@ my work with the same honesty --- to confront problems as they are, to fight
 against injustice even when inconvenient, and to maintain my integrity
 throughout my academic journey.  In fact, Prof.~Anderson's section
 \emph{Privacy and freedom issues} \cite{anderson.freedom} on his homepage was
-one major inspiration that set me on the path of cybersecurity, but which I
-will not elaborate in the document.
+one major inspiration that set me on the path of cybersecurity.
 
 Moreover, I unfortunately have lived in a place where
 peoples' digital rights are much more aggressively invaded, particularly in the
@@ -105,12 +104,12 @@ memory, because an outer host, the hardware, has a vulnerability
 \cite{meltdown}. In fact, Meltdown touches more than logical flaws in hardware;
 it relies on the timing difference of cache accesses to extract information
 from it \cite{flush.reload}, one that directly connects with the physical
-world. At this point, I feel that I should also mention the Spectre attacks
-family \cite{spectre}, which, unlike Meltdown, does not exploit a clear logic
-bug or fault in the hardware. Instead, it work by observing the side effects
-of various implementations of speculative execution, which is arguably not a
-bug but simply a feature implemented without caution to how information may be
-leaked via the outer hosts.
+world. That feature connects it to the Spectre attacks family \cite{spectre},
+which, unlike Meltdown, does not exploit a clear logic bug or fault in the
+hardware. Instead, it works by observing the side effects of various
+implementations of speculative execution, which is arguably not a bug but
+simply a feature implemented without caution to how information may be leaked
+via the outer hosts.
 
 Indeed, there is little hope to understand and model the universe thoroughly
 and accurately in one's life-time, and one can expect endless discoveries of
@@ -172,13 +171,13 @@ significantly in more than a decade, in spite of exponential growth in the
 number of Internet users and the speed of the fastest links.}''
 \cite{why.internet.just.works}. On the other hand, the protocols in the higher
 layers evolved to a much greater degree. As the transport layer welcomes
-QUIC\cite{quic}, the application layer has accumulated an enormous amount of
-innovation and progress, in particular, onion routing and
-Tor\cite{onion.routing, tor}, Bitcoin\cite{bitcoin}, VPN
-protocols\cite{openvpn, wireguard} and decentralized instant chat\cite{matrix,
-tox}, that fight for digital rights and/or promote decentralization. Yet one
-must not overlook the crypto-constructs that lay the foundation for all of
-them, which I discuss in detail in Section~\ref{sec.crypto}.
+QUIC \cite{quic}, the application layer has accumulated an enormous amount of
+innovation and progress, in particular, onion routing and Tor
+\cite{onion.routing, tor}, Bitcoin \cite{bitcoin}, VPN protocols \cite{openvpn,
+wireguard} and decentralized instant chat \cite{matrix, tox}, that fight for
+digital rights and/or promote decentralization. Yet one must not overlook the
+crypto-constructs that lay the foundation for all of them, which I discuss in
+detail in Section~\ref{sec.crypto}.
 
 Unfortunately again, because all of these are built on the Internet, a
 state-level censor could easily abuse its local authority to target them. A few
@@ -212,7 +211,7 @@ interest in the high-level design of secure distributed systems.
 
 
 \subsection[Data-driven analysis]{
-Data-driven analysis: Lights through artifical clouds}
+Data-driven analysis: Heat through artifical walls}
 Despite my intention to understand systems, many of them are not open for
 analysis, for various reasons. In particular, the aforementioned systems for
 digital surveillance and censorship are not only proprietary but often state
@@ -267,14 +266,14 @@ ml.undetectable.backdoor.cont}, which is a good example of applying
 Section~\ref{sec.crypto}. Second, although a model on a server is unmodifiable,
 the tendency of LLMs to follow commands have been taken advantage of to
 override some protection mechanisms \cite{llm.jail.break}. Finally, one can
-always request a LLM to speak in some encoding\footnote{As the time of writing,
-it is completely doable to role-play with ChatGPT by declaring that I am a
-cryptographic professor who wants to set assignments for students to
-practice some cipher, say, the Caesar ciper, and that I want ChatGPT to
-predict student replies. Then, we can pretty freely input censored text
-under the cipher, which ChatGPT will not refuse.  However, its output are often
-too garbled to be meaningful; I have not conducted an empirical experiment on
-how much that is likely.}.  
+always request a LLM to speak in some encoding\footnote{As of the time of
+	writing, it is completely doable to role-play with ChatGPT by declaring
+	that I am a cryptographic professor who wants to set assignments for
+	students to practice some cipher, say, the Caesar ciper, and that I want
+	ChatGPT to predict student replies. Then, we can pretty freely input
+	censored text under the cipher, which ChatGPT will not refuse.  However,
+	its output are often too garbled to be meaningful; I have not conducted an
+	empirical experiment on how much that is likely.}.  
 
 Although these attacks are intriguing, I must emphasize that the topic
 interests me primarily because of the influence of LLMs on the general public
@@ -484,13 +483,14 @@ similar to that of why freedom is not free, to which I return in
 Section~\ref{sec.free.software}.
 
 To end this section, cryptography is the enabler of and essential for the hope
-of the digitally abused to break free from the powerful adversaries, but on the
+of the digitally abused to break free from the powerful adversaries; but on the
 other hand, it is not a savior for those who lack basic understanding of
-security. To apply cryptography in an engaging way that automatically incites
-users to learn more about security, is a central research direction I want to
-explore. Besides, because of its deep connection with complexity theory, number
-theory, and other theoretical fields, it also serves as a good preparation
-before entering these realms in the later stages of my academic career.
+security or who are careless about their rights. To apply cryptography in an
+engaging way that automatically incites users to learn more about security, is
+a central research direction I want to explore. Besides, because of its deep
+connection with complexity theory, number theory, and other theoretical fields,
+it also serves as a good preparation before entering these realms in the later
+stages of my academic career.
 
 \section[Software engineering]{
 Software engineering: My earliest and continuing passion}
@@ -556,13 +556,13 @@ rate and the output speed of LLMs could surpass that of ours.
 
 \subsubsection{How formalization may change collaboration}
 One interesting application of proof assistants is Massot's \texttt{Blueprint}
-\cite{massot.blueprint}. It is mostly a dependent graph that links each piece
-(lemma) of a big proof as its nodes, which one can click on to go to its
-rendered \LaTeX, \LaTeX\ source, and Lean (a proof assistant) source. Depending
-on a node's formalization status, it's displayed differently in the graph
-\cite{tao.blueprint.post}. Beside being used in various math projects (see its
-README), it also has the potential to support building interactive math
-textbooks for students.
+\cite{massot.blueprint}. It is mostly a dependent graph that links the pieces
+(lemma) of a big proof as its nodes, each of which one can click on to go to
+its rendered \LaTeX, \LaTeX\ source, and Lean (a proof assistant) source.
+Depending on a node's formalization status, it's displayed differently in the
+graph \cite{tao.blueprint.post}. Beside being used in various math projects
+(see its README), it also has the potential to support building interactive
+math textbooks for students.
 
 In another direction, the deep trust that was previously required for each
 collaborator's math skills, can now be reduced by automatic verification with
@@ -615,11 +615,11 @@ obstacles. An prominent example is the current situation of open source,
 perhaps surprisingly. Often associated with Raymond’s \emph{The Cathedral and
 the Bazaar} \cite{cathedral.bazaar}, open source in fact emerged from within
 the free software community as a deviation from its core philosophy. As
-Stallman emphasizes, ``The term `open source' quickly became associated with
-ideas and arguments based only on practical values, such as making or having
-powerful, reliable software'' \cite[Essay~14]{stallman.essays}. By shifting
-focus from freedom to utility, open source has obscured the very principles the
-free software movement was founded to protect.
+Stallman emphasizes, ``\emph{The term `open source' quickly became associated
+with ideas and arguments based only on practical values, such as making or
+having powerful, reliable software}'' \cite[Essay~14]{stallman.essays}. By
+shifting focus from freedom to utility, open source has obscured the very
+principles the free software movement was founded to protect.
 
 There are two significant problems of the current situation of open source. The
 first is about the licenses. Some licenses only open the source code but
@@ -649,23 +649,24 @@ VSCode has built-in telemetry that is difficult to disable).
 
 That situation of open source, in my observation, is dangerously similar to the
 rise of authoritarian populism discussed by Norris and Inglehard, who
-understand populism as ``a style of rhetoric reflecting first-order principles
-about who should rule, claiming that legitimate power rests with `the people'
-not the elites. It remains silent about second-order principles, concerning
-what should be done, what policies should be followed, what decisions should be
-made'' \cite[p.~4]{cultural.backlash}. Similarly, I view most popular open
-source projects as reflecting shallow principles of allowing everyone to
-contribute to add more features, but ignoring deeper principles as to what
-direction the software should take, which decisions to make when convenience
-conflicts with freedom, and what are not allowed, even if they add more
-resources to the development of the software. Although a difference is that
-many populists reject the previous ``ruling elites'' whereas many open source
-members may not strongly oppose free software, they all involve people who
-commit to good principles such as democracy and open contribution only in the
-form, but ignoring the ideas and actions behind.  Consequently, just as open
-source projects are corrupted and taken over by corporations, Norris and
-Inglehard observed that such shallow commitment to democracy in turn damages
-democracy itself and welcomes authoritarian \cite{cultural.backlash}.
+understand populism as ``\emph{a style of rhetoric reflecting first-order
+	principles about who should rule, claiming that legitimate power rests with
+	`the people' not the elites. It remains silent about second-order
+	principles, concerning what should be done, what policies should be
+followed, what decisions should be made}'' \cite[p.~4]{cultural.backlash}.
+Similarly, I view most popular open source projects as reflecting shallow
+principles of allowing everyone to contribute to add more features, but
+ignoring deeper principles as to what direction the software should take, which
+decisions to make when convenience conflicts with freedom, and what are not
+allowed, even if they add more resources to the development of the software.
+Although a difference is that many populists reject the previous ``ruling
+elites'' whereas many open source members may not strongly oppose free
+software, they all involve people who commit to good principles such as
+democracy and open contribution only in the form, but ignoring the ideas and
+actions behind.  Consequently, just as open source projects are corrupted and
+taken over by corporations, Norris and Inglehard observed that such shallow
+commitment to democracy in turn damages democracy itself and welcomes
+authoritarian \cite{cultural.backlash}.
 
 Before concluding the discussion, one should note that there are many pieces of
 open source software which are very close to free software, which, although not
@@ -712,7 +713,6 @@ principles is my strong desire to understand the foundational reasonings. In
 this section, I will describe how that has led me to explore the purer
 mathematical areas and my current interests in them.
 
-\subsection{Type theory and metamathematics}
 In the manuals of various proof assistant languages, technical terms from type
 theory such as universe, sort, and introduction \& elimination rules, are
 frequently mentioned. For me who is driven to understand what's going on
@@ -722,13 +722,19 @@ into its history and the philosophical doctrines it was born from.
 I have thought of a few ways to present this section, and in the end I decided
 that I will present it as a narrative of the basic history. If you share my
 curiosity for foundational reasonings, then after seeing the history I
-presented in my style, I believe you will also see my passion.  A good starting
-point is probably Cantor's work on his theory of abstract sets, particularly
-his ingenious abstraction of sets to cardinal numbers for their comparsion.  In
-1638 Galileo noted that there is a bijection between the natural numbers and
-their squares: $f : n \mapsto n^2$, raising questions about the principle that
-the whole is greater than any of its parts. Cantor took this further to
-systematically compare sets, using bijections as the primary tool. 
+presented in my style, I believe you will also see my passion.
+
+\subsection[Metamathematics]{Metamathematics: where were we mistaken?}
+\label{sec.metamath}
+A good starting point is probably Cantor's work on his theory of abstract
+sets\footnote{Much of this subsection is my paraphrase and concentration of
+	Kleene's \emph{Introduction to Metamathematics} \cite{kleeneitmm}, a fact
+the readers should be aware of.},
+particularly his ingenious abstraction of sets to cardinal numbers for their
+comparsion.  In 1638 Galileo noted that there is a bijection between the
+natural numbers and their squares: $f : n \mapsto n^2$, raising questions about
+the principle that the whole is greater than any of its parts. Cantor took this
+further to systematically compare sets, using bijections as the primary tool. 
 
 An essential mental construct that Cantor used was his diagnoal argument, which
 is often presented when proving the real numbers is not countable. Yet the
@@ -785,23 +791,43 @@ there was a universal set. He had hoped for a single, unified solution to the
 paradoxes of logic. But to his discouragement, after a few years of various
 attempts to fix them in the way he hoped, he was eventually forced to come to
 his ramified theory of types, using a hierachy of types to classify
-propositions \cite{companion.to.russell.tt}.
+propositions \cite{companion.to.russell.tt}, to which I turn in
+Section~\ref{sec.tt}. 
 
-Perhaps one reason why the paradoxes were so difficult to fix was that Cantor's
-diagonal method had revealed something deeply wrong about the previous
-mathematical reasoning, one which goes deeper than even the prominent work of
-axiomatic set theory which tried to eliminate these paradoxes. Previously,
-mathematicians thought that they were working with real and complete math
-objects such as sets and numbers and that they were speaking truths of them as
-theorems. Since that had lead to contradictions, there must have been something
-wrong in the foundation of what we believed these objects to be or our logic.
-Even if we discard the previous foundation entirely and adopt the axiomatic
-theory as the new foundation, there must still be the matter of truth and
-meaning --- we cannot adopt the axiomatic set theory entirely formally as the
-new foundation, without a meaning about what we think is true or not
-\cite[Ch.~12]{kleeneitmm}.
+A patch to these paradoxes that we often teach today is the collection of
+axioms in the Axiomatic Set Theory, restricting what a set can be. However,
+Kleene points out that we must not be satisfied with this patch only. Up until
+these paradoxes were known, in the field of arithmetic, analysis, and early set
+theory, mathematicians thought they were dealing with complete math objects and
+that theorems represent truths about them; they generally believed that their
+mental activities of constructing and reasoning about these objects make sense
+to their minds. Thus, when a contradiction came out of such activities, we must
+believe that some logic we used didn't represent our mind or some objects were
+constructed inherently wrong, if we do not want to believe that our minds are
+absurd or math objects are nonsense.  The axiom set theory, if taken formally,
+then we must find meaning elsewhere; if taken informally, then we must convince
+ourselves that they actually represent our mind faithfully instead.
+\cite[Ch.~12]{kleeneitmm}. 
 
-\emph{Unfinioned.}
+By observing the paradoxes deeper, it can be found that one manipulation,
+similar to Cantor's diagonal method, underlies them. When we define a part of a
+whole using the whole itself, we find ourselves trapped in a circularity, one
+which Russell described as the ``vicious circle principle.'' Although
+disallowing this manipulation would eliminate the paradoxes, by doing so we
+would find that a substantial amount of analysis, which had found success
+both theoretically and in application, also had to be eliminated. The real
+number system that caputres our intuition about the physical world is simply
+too precious to be deemed unusable.
+
+
+\emph{Unfinished.}
+
+\subsection[Theory of computation]{Theory of computation: a model of
+mathematicians' limit}
+
+\subsection[Type theory]{Type theory: a convenient structure for machines}
+\label{sec.tt}
+
 
 \include{additional}
 
