@@ -10,7 +10,7 @@ very happy to [hear about it](#reach-me).
 
 # Interests and areas of work
 ## Short summary
-Powerful entities have long insisted on invade people's digital rights to an unjust degree 
+Powerful entities have long insisted on invading people's digital rights to an unjust degree 
 (e.g. EU's chat control), despite explicit opposition from leading experts 
 (e.g. Keys under doormats, bugs in our pockets).
 
