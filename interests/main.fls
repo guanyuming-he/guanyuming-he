@@ -1,0 +1,8 @@
+PWD /home/anony/Documents/git_repos/guanyuming-he/interests
+INPUT /home/anony/texlive/2025/texmf.cnf
+INPUT /home/anony/texlive/2025/texmf-dist/web2c/texmf.cnf
+INPUT /home/anony/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT main.tex
+OUTPUT main.log
+INPUT /home/anony/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /home/anony/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
