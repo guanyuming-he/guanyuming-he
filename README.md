@@ -25,6 +25,7 @@ I also have interests in theoretical areas:
 1) type theory
 2) metamathematics
 3) theory of computation
+
 But I self-estimate that I do not have the necessary knowledge base to work on
 meaning things on them right away (I was not from a math major). As such, I
 plan to accumulate my understanding of them while working on my current
