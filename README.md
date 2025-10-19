@@ -34,7 +34,7 @@ interests, and explore them once I have enough knowledge.
 To see an elaboration of my interests, please contact me. For reasons I cannot control, I must not publish
 it publicly.
 
-## Interets diagram
+## Interests diagram
 The chart below shows the areas that I currently have an interest in and work on.
 - Those in circles are general directions, while those in rectangles are specific sub-topics.
 - Those that I primarily focus on are in red and have double borders, while all the others that I just get in contact with are in dark blue.
