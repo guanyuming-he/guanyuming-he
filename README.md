@@ -3,23 +3,33 @@
 ## Looking for PhD opportunities
 I am currently looking for full-time and fully-funded PhD openings that start
 in 2026. If you are looking for PhD students, why not take a look at my
-interests below, especially the longer version I have been developing [inside
-the repo](interests/main.pdf)?
+interests below?
 
 If you are interested in working with me as my adviser/supervisor, I would be
 very happy to [hear about it](#reach-me).
 
 # Interests and areas of work
-## Current interests
+## Short summary
+Powerful entities have long insisted on invade people's digital rights to an unjust degree 
+(e.g. EU's chat control), despite explicit opposition from leading experts 
+(e.g. Keys under doormats, bugs in our pockets).
+
+My current interests are in these four directions:
+1) Systematically or empirically (mainly computationally) analyze existing digitial (particularly network) systems
+and figure out how and to what extent they enable such digital abuses.
+2) Patch theses systems by engineering, or develop new systems if necessary.
+3) Apply "paradoxical" modern cryptography constructs to achieve strong properties of developed systems.
+4) Formalize and verify critical parts of our systems, or do it to other people's systems for the sake of 1).
+
+To see an elaboration of my interests, please contact me. For reasons I cannot control, I must not publish
+it publicly.
+
+## Interets diagram
 The chart below shows the areas that I currently have an interest in and work on.
 - Those in circles are general directions, while those in rectangles are specific sub-topics.
 - Those that I primarily focus on are in red and have double borders, while all the others that I just get in contact with are in dark blue.
 - One topic derives (contains) another with an arrow. The arrows in the CS area are in black, whereas those in the Math area are in blue.
 - I tried many ways to place the Mathematics subgraph to the right but none worked. Thus, the current lines are a bit messy.
-
-If you have time, I strongly recommend you to read my interests in detail
-[inside the repo](interests/main.pdf), which I try hard to make enjoyable and
-exciting to read.
 
 ```mermaid
 flowchart LR
