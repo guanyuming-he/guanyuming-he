@@ -75,6 +75,7 @@ flowchart LR
 		direction RL
 		EN((Elementary number theory)):::gen
 		TT(((Type theory and Metamathematics))):::gen-pri
+		TC((Theory of computation)):::gen
 		AL((Analysis & Linear Algebra)):::gen
 
 		EN --> CR
