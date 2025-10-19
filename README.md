@@ -21,6 +21,15 @@ and figure out how and to what extent they enable such digital abuses.
 3) Apply "paradoxical" modern cryptography constructs to achieve strong properties of developed systems.
 4) Formalize and verify critical parts of our systems, or do it to other people's systems for the sake of 1).
 
+I also have interests in theoretical areas:
+1) type theory
+2) metamathematics
+3) theory of computation
+But I self-estimate that I do not have the necessary knowledge base to work on
+meaning things on them right away (I was not from a math major). As such, I
+plan to accumulate my understanding of them while working on my current
+interests, and explore them once I have enough knowledge.
+
 To see an elaboration of my interests, please contact me. For reasons I cannot control, I must not publish
 it publicly.
 
