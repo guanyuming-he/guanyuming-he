@@ -1,4 +1,4 @@
-## Current status: MSc student (degree expected in Nov 2025).
+# Current status: Graduated MSc student.
 
 ## Looking for PhD opportunities
 I am currently looking for full-time and fully-funded PhD openings that start
@@ -27,7 +27,7 @@ I also have interests in theoretical areas:
 3) theory of computation
 
 But I self-estimate that I do not have the necessary knowledge base to work on
-meaning things on them right away (I was not from a math major). As such, I
+meaningful things on them right away (I was not from a math major). As such, I
 plan to accumulate my understanding of them while working on my current
 interests, and explore them once I have enough knowledge.
 
