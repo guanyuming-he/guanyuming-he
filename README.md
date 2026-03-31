@@ -1,13 +1,5 @@
 # Current status: Graduated MSc student.
 
-## Looking for PhD opportunities
-I am currently looking for full-time and fully-funded PhD openings that start
-in 2026. If you are looking for PhD students, why not take a look at my
-interests below?
-
-If you are interested in working with me as my adviser/supervisor, I would be
-very happy to [hear about it](#reach-me).
-
 # Interests and areas of work
 ## Short summary
 Powerful entities have long insisted on invading people's digital rights to an unjust degree 
