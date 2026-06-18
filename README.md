@@ -1,83 +1,8 @@
 # Current status: Graduated MSc student.
 
 # Interests and areas of work
-## Short summary
-Powerful entities have long insisted on invading people's digital rights to an unjust degree 
-(e.g. EU's chat control), despite explicit opposition from leading experts 
-(e.g. Keys under doormats, bugs in our pockets).
-
-My current interests are in these four directions:
-1) Systematically or empirically (mainly computationally) analyze existing digitial (particularly network) systems
-and figure out how and to what extent they enable such digital abuses.
-2) Patch theses systems by engineering, or develop new systems if necessary.
-3) Apply "paradoxical" modern cryptography constructs to achieve strong properties of developed systems.
-4) Formalize and verify critical parts of our systems, or do it to other people's systems for the sake of 1).
-
-I also have interests in theoretical areas:
-1) type theory
-2) metamathematics
-3) theory of computation
-
-But I self-estimate that I do not have the necessary knowledge base to work on
-meaningful things on them right away (I was not from a math major). As such, I
-plan to accumulate my understanding of them while working on my current
-interests, and explore them once I have enough knowledge.
-
-To see an elaboration of my interests, please contact me. For reasons I cannot control, I must not publish
-it publicly.
-
-## Interests diagram
-The chart below shows the areas that I currently have an interest in and work on.
-- Those in circles are general directions, while those in rectangles are specific sub-topics.
-- Those that I primarily focus on are in red and have double borders, while all the others that I just get in contact with are in dark blue.
-- One topic derives (contains) another with an arrow. The arrows in the CS area are in black, whereas those in the Math area are in blue.
-- I tried many ways to place the Mathematics subgraph to the right but none worked. Thus, the current lines are a bit messy.
-
-```mermaid
-flowchart LR
-	%% Primary general topic, general topic, primary subtopic, subtopic,
-	%% respectively
-	classDef gen-pri	shape:dbl-circ,stroke:#f00
-	classDef gen		shape:circle
-	classDef sub-pri	shape:subproc,stroke:#f00
-	classDef sub		shape:rect
-
-	%% Left side: CS
-	subgraph "Computer Science"
-		direction LR
-		%% General directions
-		CY(((Cybersecurity))):::gen-pri
-		SE(((Software Engineering))):::gen-pri
-		AI((Artificial Intelligence)):::gen
-
-		%% Cybersecurity branches
-		CY --> CR[Cryptography]:::sub
-		CY --> DR[["Digital rights and privacy"]]:::sub-pri
-		CY --> SS[["Secure systems (OS, Distributed)"]]:::sub-pri
-		CY --> FV[["Formal verification"]]:::sub-pri
-		SE --> SS
-		SE --> FV
-		SE --> HP["High performance & low-level programming"]:::sub
-		AI --> ML["Machine learning"]:::sub -->
-		LLM["LLMs"]:::sub
-	end
-
-	%% Right side: Math
-	subgraph Mathematics
-		direction RL
-		EN((Elementary number theory)):::gen
-		TT(((Type theory and Metamathematics))):::gen-pri
-		TC((Theory of computation)):::gen
-		AL((Analysis & Linear Algebra)):::gen
-
-		EN --> CR
-		TT --> FV
-		AL --> ML
-		AL --> HP
-		%% Change link color
-		linkStyle 9,10,11,12 stroke:#00f
-	end
-```
+- I currently work in program analysis and its applictions (e.g. superoptimization of programs).
+- I DO NOT currently work in, but have interests in formal methods and cybersecurity.
 
 ## Previous interests
 - Computer graphics
@@ -90,7 +15,7 @@ address. If you are in the academia, then I might also use one of my
 institution email addresses. The current one is guanyuming DOT he 24 AT 
 imperial DOT ac DOT uk.
 
-Please note that I have no intention to use any of the email addresses
+Please note that I have no intention of using any of the email addresses
 permanently. The proton one is subject to change, should I find Proton unethical
 and untrustworthy in the future (see the suspension of journalists' email
 addresses [by Proton](https://web.archive.org/web/20250923025829/https://theintercept.com/2025/09/12/proton-mail-journalist-accounts-suspended/)). 
@@ -126,7 +51,9 @@ communication. As such, I would select the communication method by use case.
 
 # My repositories here
 ## Distribution
-Most of my personal projects are here. Some other personal projects could
+Most of my personal projects are here. 
+
+Some other personal projects could
 be belong to my other GitHub accounts, for example, the one I used during
 my MSc, which was created to follow the recommendation of the department.
 For your convenience, I have negotiated to publish some of those under 
@@ -139,5 +66,5 @@ some of my group projects during my undergraduate study.
 The activity algorithm is biased. First, it won't count commits to 
 non-default branches. I could be using many different branches heavily 
 sometimes. For instance, in some lab solutions I use a dedicated branch
-for one lab by design. Second, repos authored by my other accounts that
-I make public here also do not count.
+for one lab by design. Second, repos authored by my other accounts of mine 
+which I publish here do not count.
